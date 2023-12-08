@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>注册</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<style>
+		body {
+			text-align: center;
+			color: #aa00ff;
+		}
+
+		fieldset {
+			margin: 0 auto;
+			float: none;
+		}
+
+		input {
+			padding: 5px;
+			color: white;
+			margin-bottom: 10px;
+			background-color: #55aaff;
+			border: 1px lightblue;
+			border-radius: 5px;
+			letter-spacing: 2px;
+		}
+		button{
+			padding: 5px;
+			color: white;
+			margin-bottom: 10px;
+			background-color: #55aaff;
+			border: 1px lightblue;
+			border-radius: 5px;
+			letter-spacing: 2px;
+		}
+
+		select {
+			padding: 5px;
+			color: white;
+			margin-bottom: 10px;
+			background-color: #55aaff;
+			border: 1px lightblue;
+			border-radius: 5px;
+			letter-spacing: 2px;
+		}
+		
+		.con4 {
+			width: 300px;
+			height: auto;
+			overflow: hidden;
+			margin: 20px auto;
+			color: #FFFFFF;
+		}
+		
+		.con4 .btn {
+			width: 100%;
+			height: 40px;
+			line-height: 40px;
+			text-align: center;
+			background: #55aaff;
+			display: block;
+			font-size: 16px;
+			border-radius: 5px;
+		}
+		
+		.upload {
+			float: center;
+			position: relative;
+		}
+		
+		.upload_pic {
+			display: block;
+			width: 100%;
+			height: 40px;
+			position: absolute;
+			left: 0;
+			top: 0;
+			opacity: 0;
+			border-radius: 5px;
+		}
+		
+		#cvs {
+			border: 1px solid #000;
+			margin: 20px 0 20px 50px;
+			position: relative;
+		}
+		
+		#music {
+			width: 300px;
+			height: 80px;
+			border-radius: 10px;
+			margin: 20px auto;
+			position: relative;
+			background: url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1545149319600&di=b1ec2d1c0aa00fa507eee88b75198133&imgtype=0&src=http%3A%2F%2Fwww.17qq.com%2Fimg_qqtouxiang%2F74841037.jpeg) no-repeat;
+			background-size: cover;
+			text-align: center;
+		}
+		#aduio{
+			color: white;
+			background-color: #55aaff;
+		}
+	</style>
+	
+</head>
+
+<body style="height=900px">
+
+	<div id="img" style="position: absolute; width: 100%; height: 100%; background-color:snow; z-index: -1;">
+		<img src="image/3.jpg" height="150%" width="100%" />
+	</div>
+	<h1 style="color:mediumpurple; font-size: 50px;">欢迎您的到来</h1>
+	
+	
+	<!--背景音乐-->
+	<div id="music">
+			<audio src="image/1.mp3" controls id="audio">low browsers not support</audio>
+			<div class="btn">
+				<button id="play">开始</button>
+				<button id="pause">暂停</button>
+				<button id="prev">上一首</button>
+				<button id="next">下一首</button>
+			</div>
+	</div>
+	<script>
+	// 播放
+	play.onclick = function(){
+		if(audio.paused){
+			audio.play();
+		}
+	}
+	 
+	// 暂停
+	pause.onclick = function(){
+		if(audio.played){
+			audio.pause();
+		}
+	}
+	var num=1;
+	var len=3;
+	var bgImage = document.getElementById("musicImg");
+	prev.onclick = function(){
+		if(num>1){
+			num = num - 1;
+			}
+		else{
+			num=3;
+			}
+		
+		audio.src = 'image/' + num + '.mp3';
+		audio.play();
+	}
+	 
+	// 下一首
+	next.onclick = function(){
+		if(num<3){
+			num = num + 1;
+			}
+		else{
+			num=1;
+			}
+		audio.src = 'image/' + num + '.mp3';
+		audio.play();
+	 
+	}
+	 
+	audio.addEventListener('ended',function(){
+		next.onclick();
+	},false);
+	// 上一首
+    </script>
+	
+	
+	<!--上传头像
+	<div class="con4">
+		<canvas id="cvs" width="150" height="150"></canvas> <span class="btn upload">上传头像<input type="file" class="upload_pic" id="upload" /></span>
+	</div>
+	<script> 
+		var input1 = document.getElementById("upload");
+		if(typeof FileReader === 'undefined') {
+			input1.setAttribute('disabled', 'disabled');
+		} else {
+			input1.addEventListener('change', readFile, false);
+	 
+		}
+		function readFile() {
+			var file = this.files[0]; 
+			if(!/image\/\w+/.test(file.type)) {
+				alert("文件必须为图片！");
+				return false;
+			}
+			var reader = new FileReader(); 
+			reader.readAsDataURL(file); 
+			reader.onload = function(e) {
+				var image = new Image();
+				image.src = e.target.result;
+				var max = 200;
+				image.onload = function() {
+					var canvas = document.getElementById("cvs");
+					var ctx = canvas.getContext("2d");
+					ctx.clearRect(0, 0, canvas.width, canvas.height);
+					ctx.drawImage(image, 0, 0, 150, 150);
+				};
+			}
+		};
+	</script>-->
+	
+	
+	<!--注册信息-->
+
+		<fieldset style="-webkit-border-radius: 10px;border-width: 3px; border-color: #55ffff; width:25%; height:220;">
+			<legend align="left"
+				style="color: #0066CC; font: bold 16px verdana,geneva,sans-serif; text-shadow: 2px 2px 2px rgb(88,126,156);">
+				注册信息</legend>
+			<input type="text" id="user" placeholder="用户名" required="required"><br />
+			<input type="password" id="password" placeholder="密码" required="required"><br />
+			<input type="email" id="email" placeholder="电子邮箱" required="required"><br />
+			<input type="tel" id="tel" placeholder="手机号码" required="required"><br />
+			
+		</fieldset>
+		<br />
+		<br />
+		<br />
+		<fieldset style="-webkit-border-radius: 10px;border-width: 3px; border-color: #55ffff; width:25%; height:220;">
+			<legend align="left"
+				style="color: #0066CC; font: bold 16px verdana,geneva,sans-serif; text-shadow: 2px 2px 2px rgb(88,126,156);">
+				个人信息</legend>
+			性别：<label><input style="color:#55ffff;" type="radio" name="se" id="sex" value="">男</label>
+			<label><input style="color:#55ffff;" type="radio" name="se" id="sexx" value="">女</label><br />
+			出生日期：<input type="date" id="datee"><br />
+			个人职业：<select id="zhi">
+				<option value="1">经商</option>
+				<option value="2">军人</option>
+				<option value="3">务农</option>
+				<option value="4">教师</option>
+				<option value="5">医生</option>
+				<option value="6">学生</option>
+				<option value="7">职工</option>
+				<option value="8">个体</option>
+			</select><br />
+			兴趣爱好：<select id="hobby">
+				<option value="1">影视</option>
+				<option value="2">新闻</option>
+				<option value="3">游戏</option>
+				<option value="4">体育</option>
+				<option value="5">教育</option>
+			</select>
+		</fieldset>
+		<br /><br /><br />
+		<td>
+			<button id="btn" type="button" style="width: 80px;height: 30px;" value="注册" onclick="check_login()">注册</button>
+			<!--<input type="submit" id="btn" value="注册" onclick="check_login()">-->
+			<!--<input type="reset" value="重置">-->
+		</td>
+		<script type="text/javascript">
+		         //window.onload= function(){
+		                var oUser=document.getElementById('user');
+		                var oPwd=document.getElementById('password');
+						var oMal=document.getElementById('email');
+						var oPhn=document.getElementById('tle');
+		              function check_login(){
+
+		                  var upData=null;
+		                  var repeat=null;
+		                  if (oUser.value&&oPwd.value) {
+		                      if (window.localStorage.getItem('list')) {
+		                          upData={'user':oUser.value,'password':oPwd.value,'email':oMal,'tle':oPhn};
+		                          var dataJson=window.localStorage.getItem('list');
+		                          dataJson=eval('('+dataJson+')');
+		                          for (var i=0;i<dataJson.length;i++) {
+		                              if (dataJson[i].user==upData.user) {
+		                                  alert("用户已存在");
+		                                  repeat=1;
+		                              }
+		                          }
+		                          if (repeat==null) {
+		                              alert('注册成功');
+		                              dataJson.push(upData);
+		                              dataJson=JSON.stringify(dataJson);
+		                              window.localStorage.setItem('list',dataJson);
+		                              console.log(window.localStorage.getItem('list'));
+									  window.location="登录.html";
+		                          }
+		                      } else {
+		                          upData={'user':oUser.value,'password':oPwd.value,'email':oMal,'phone':oPhn};
+		                          console.log(upData);
+		                          var data=[];
+		                          data.push(upData);
+		                          data=JSON.stringify(data);
+		                          window.localStorage.setItem('list',data);
+		                          alert('注册成功');
+		                          console.log(window.localStorage.getItem('list'));
+								  window.location="登录.html";
+		                      }
+		                  }
+						  else{
+							  alert('注册信息为必填项，请填写完整');
+						  }
+		          }
+		      </script>
+		
+	</body>
+</html>

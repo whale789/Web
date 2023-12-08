@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>留言区</title>
+	<style>
+	      body {
+	        background:url("image/留言板背景.jpg")  no-repeat center center;   /*加载背景图*/   /* 背景图不平铺 */
+	        background-size:cover;  /* 让背景图基于容器大小伸缩 */
+	        background-attachment:fixed;        /* 当内容高度大于图片高度时，背景图像的位置相对于viewport固定 */  
+	        background-color:#CCCCCC;   /* 设置背景颜色，背景图加载过程中会显示背景色 */
+	      }
+		  div::-webkit-scrollbar{
+		  	display: none;
+		  }
+		  .leave{
+			  border: 1px solid #000000;
+			  border-radius: 20px;
+			  margin-top: 6%;
+			  width: 48%;
+			  height: 550px;
+			  margin-left: 26%;
+			  background-color: white;
+		  }
+		  .leavetext{
+			  border: 1px solid #000000;
+			  height: 420px;
+			  width: 90%;
+			  margin-left: 5%;
+			  margin-top: 5%;
+			  overflow-y: scroll;
+			  overflow-x: auto;
+			  /*line-height: 25px;*/
+		  }
+		  .leavename{
+			  display: flex;
+			 /* border: 1px solid #000000;*/
+			  width: 90%;
+			  height: 50px;
+			  margin-top: 2%;
+			  margin-left: 5%;
+		  }
+		  button:hover{
+			  background-color: #00BFFF;
+			  color: #00BFFF;
+		  }
+	</style>
+    <script type="text/javascript">
+        function ReadCookie(cookie_name){
+            //判断是否存在cookie
+            if (document.cookie.length > 0){
+                //查询cookie开始部分
+                cookie_start = document.cookie.indexOf(cookie_name + "=")
+                //如果存在
+                if (cookie_start != -1){
+                    //计算结束部分
+                    cookie_start = cookie_start + cookie_name.length + 1
+                    cookie_end = document.cookie.indexOf(";", cookie_start)
+                    //如果已经是最后一个cookie值，则取cookie长度
+                    if (cookie_end == -1) {
+                        cookie_end = document.cookie.length
+                    }
+                    //获取cookie值，unescape对特殊字符解密
+                    return unescape(document.cookie.substring(cookie_start,cookie_end))
+                }
+            }
+            //其它情况返回空
+            return ""
+        }
+
+        function $(id) {
+            return document.getElementById(id);
+        }
+
+        function init() {
+            var username = ReadCookie("username");
+			var uname=document.getElementById('txtName');
+            if(username && username.length>0) {
+                /*$("msg").innerHTML = "<h1>欢迎光临," + username + "!</h1>";*/  
+				uname.innerHTML = username;
+            } else {
+                /*$("msg").innerHTML = "<a href='登录.html'>请录入名字</a>";*/
+				 alert("请您先登录");
+				 window.location="登录mirror.html";
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+		<div id="msg"></div>
+		<div class="leave">
+			<div class="leavetext" id="ltext">
+				<table id="tblData" style="font-size: 18px;">
+				    
+				</table>
+			</div>
+			<div class="leavename">
+				<div id="txtName" style="overflow-x: auto; color: #00BFFF; background-color: rgba(240, 240, 240, 0.8);width: 12%;height: 40px;line-height: 38px; text-align: center;border-radius: 5px; ">
+					
+				</div>
+				<input type="text" id="txtWords" style="border: 1px solid white; background-color: rgba(240, 240, 240, 0.8); width: 60%; margin-left: 5%;height: 35px;border-radius: 5px" required>
+				<input type="button" id="btnSave" style="background-color: rgba(240, 240, 240, 0.8); width: 10%;margin-left: 5%;height: 38px;border-radius: 5px;" value="Send">
+			</div>
+		</div>
+</body>
+<script src="js/jquery-1.5.1.js" type="text/javascript"></script>
+    <script type="text/javascript">
+	    var myDate = new Date(); 
+        var username = ReadCookie("username");
+        function initDatabase() {//初始化数据库
+            var db = getCurrentDb();
+            if(!db) { 
+                alert("您的浏览器不支持HTML5");
+                return;
+            }
+            db.transaction(function (trans) {
+                trans.executeSql("create table if not exists leaveword(uName text null,time text null,words text null)", [], function (trans, result) {
+                    
+                }, function (trans, message) {
+                    alert(message);
+                });
+            }, function (trans, result) {
+            }, function (trans, message) {
+            });
+        }
+		 showAllTheData();
+		 var div=document.getElementById("ltext");
+		$(function () {
+		    initDatabase();
+		    $("#btnSave").click(function () {
+		        var txtName =username;
+		        var txtTime =myDate.toLocaleString();
+		        var txtWords = $("#txtWords").val();
+		        var db = getCurrentDb();
+		        db.transaction(function (trans) {
+		            trans.executeSql("insert into leaveword(uName,time,words) values(?,?,?) ", [txtName, txtTime, txtWords], function (ts, data) {
+		            }, function (ts, message) {
+		                alert(message);
+		            });
+		        });
+		        showAllTheData();
+		    });
+		});
+		function boxScroll(o){
+		     o.scrollTop = o.scrollHeight;
+		}
+		function getCurrentDb() {
+		    var db = openDatabase("myDb", "1.0", "it's to save leaveword data!", 1024 * 1024); ;
+		    return db;
+		}
+		function showAllTheData() {
+		    $("#tblData").empty();
+		    var db = getCurrentDb();
+		    db.transaction(function (trans) {
+		        trans.executeSql("select * from leaveword ", [], function (ts, data) {
+		            if (data) {
+		                for (var i = 0; i < data.rows.length; i++) {
+		                    appendDataToTable(data.rows.item(i));//获取某行数据的json对象
+		                }
+		            }
+		        }, function (ts, message) {
+		            alert(message);
+		            var tst = message;
+		        });
+		    });
+			document.getElementById("txtWords").value="";
+		}
+		function appendDataToTable(data) {//将数据展示到表格里面
+		    //uName,title,words
+		    var txtName = data.uName;
+		    var txtTime = data.time;
+		    var words = data.words;
+		    var strHtml ='';
+		    strHtml += '<tr>';
+		    strHtml += '<td style="text-align:center; color:green;font-size:15px;vertical-align: top;">'+txtName+"::</td>";
+		    strHtml += '<td style=" width:300px;color:darkgray;font-size:15px;vertical-align: top;">' + txtTime + ":&#8194</td>";
+		    strHtml += '<td style="width:500px;vertical-align: top;">' + words + "</td>";
+		    strHtml += "</tr>";
+		    $("#tblData").append(strHtml);
+			boxScroll(div);
+			
+		}
+		
+		
+		function SetCookie(cookieName,cookieValue) {
+		    document.cookie = cookieName + "=" + escape(cookieValue)
+		}
+		
+		 if(top.window['upload']){ 
+		    top.window['upload'].frames.location.reload();
+		  }
+
+		
+</script>
+</html>

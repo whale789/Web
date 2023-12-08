@@ -1,0 +1,4097 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		 <meta charset="UTF-8">
+		<title>首页</title>
+		<style type="text/css">
+		     body{
+				 background:whitesmoke;
+			 }
+			 a{
+				 text-decoration:none;
+			 }
+			 /*导航栏*/
+			.headline{
+				display: flex;
+				/*border: 1px solid #000000;*/
+				width:80%;
+				margin-left:10%;
+				z-index:-1;
+				background-color:white
+			}
+			.myname{
+				/*border: 1px solid #000000;*/
+				width: 20%;
+				margin-left: 0%;
+				font-size: 30px;
+				font-weight: bold;
+				text-align: center;
+			}
+		    .search{
+				/*border: 1px solid #aa00ff;*/
+				margin-top: 0.2%;
+				display: flex;
+				margin-left:2%;
+				width:20%;
+			}
+			.search input{
+				height: 60%;
+				width:65%;
+				border: 1px solid white;
+				border-top-left-radius: 15px;
+				border-bottom-left-radius: 15px;
+				/*letter-spacing: 2px;*/
+				background-color: whitesmoke;
+				outline-color:deepskyblue;
+				margin-top: 3%;
+			}
+			.searchbtn{
+				width: 15%;
+				height: 65%;
+				margin-left: 1.5%;
+				/*border: 1px solid #000000;*/
+				border-top-right-radius: 15px;
+				border-bottom-right-radius: 15px;
+				background-color: whitesmoke;
+				margin-top: 3%;
+			}
+			.searchbtn:hover{
+				background-color: deepskyblue;
+			}
+			.searchbtn img{
+				width: 50%;
+				height:50%;
+				margin-left: 12%;
+				margin-top: 20%;
+			}
+			.music{
+				display: flex;
+				/*border: 1px solid #00BFFF;*/
+				margin-left: 23%;
+			}
+			.music audio{
+			    /*border: 1px solid #000000;*/
+				height: 35px;
+				margin-left: 4%;
+				margin-top:2.5%;
+				border-radius: 15px;
+				/*z-index: -1;*/
+			}
+			.music-img{
+				/*border: 1px solid #000000;*/
+				width:50px;
+				height: 50px;
+				border-radius: 25px;
+				margin-right: 7%;
+			}
+			.music-img img{
+				width:50px;
+				height: 50px;
+				border-radius: 25px;
+			}
+            .play{
+				/*border: 1px solid #AA00FF;*/
+				height: 25px;
+				width: 25px;
+				border-radius: 12.5px;
+				margin-right: -14%;
+				margin-top: 3.3%;
+				z-index: 1;
+			}
+			.play img{
+				height: 25px;
+				width: 25px;
+				border-radius: 12.5px;
+			}
+			/*导航栏结束*/
+			.middle{
+				display: flex;
+				/*border: 1px solid #000000;*/
+			}
+			/*左侧栏*/
+			.left{
+				overflow-x: hidden;
+			    overflow-y: scroll; 
+				/*border: 1px solid #000000;*/
+				width: 16%;
+				height: 760px;
+				margin-left:10%;
+				margin-top: 0.5%;
+				background-color: white;
+			}
+			div::-webkit-scrollbar{
+				display: none;
+			}
+			/*左侧头像+名字*/
+			.leftname{
+				display: flex;
+				border-bottom: 3px solid snow;
+				width:100%;
+				height: 80px;
+				background-color: white;
+			}
+			.leftimg{
+				/*border: 1px solid #000000;*/
+				width: 60px;
+				height: 60px;
+				border-radius: 30px;
+				margin-left: 5%;
+				margin-top: 3.5%;
+			}
+			.leftimg img{
+				width: 60px;
+				height: 60px;
+				border-radius: 30px;
+			}
+			.leftmy{
+				/*border: 1px solid #000000;*/
+				margin-left: 15%;
+			}
+			.leftwhale{
+				/*border: 1px solid #000000;*/
+				font-size: 20px;
+				font-weight: bold;
+				color:darkgrey;
+				margin-top: 22%;
+			}
+			.leftintde{
+				/*border: 1px solid #000000;*/
+				font-size: 12px;
+				text-align: center;
+				color: #ADD8E6;
+			}
+			/*左侧姓名+头像OVER*/
+			
+			
+			
+            /*标题栏*/
+			.nag{
+				display: flex;
+				/*border: 1px solid #000000;*/ 
+				color:darkgrey;
+				margin-top: 10%;
+				width: 15%;
+				margin-left: 5%;
+			}
+			.upper{
+				display: flex;
+				/*border: 1px solid #000000;*/
+				height: 45px;
+				/*margin-top: 5%;*/
+			}
+			.upper:hover{
+				background-color:gainsboro;
+				box-shadow: 10px 10px 10px rgba(0,0,0,.5);
+				-moz-box-shadow: 10px 10px 10px rgba(0,0,0,.5);
+				-webkit-box-shadow: 10px 10px 10px rgba(0,0,0,.5);
+			}
+			.upperpic{
+				/*border: 1px solid #000000;*/
+				margin-left: 15%;
+				width:10%;
+				height: 60%;
+				margin-top:3.5%;
+			}
+			.uppertext{
+				/*border: 1px solid #000000;*/
+				margin-left: 6%;
+				height: 60%;
+				text-align: center;
+				font-size: 18px;
+				color:darkgrey;
+				margin-top: 3.5%;
+			}
+			
+			
+			
+			.sum{
+				height: 300px;
+				/*border: 1px solid #000000;*/
+				overflow:scroll; 
+		    }
+			.sum label:hover {
+				background-color:gainsboro;
+			}
+			
+			.sum input:checked+label,
+			.sum input:checked+label:hover {
+				background-color:gainsboro;
+				color: #3d7489;
+			}
+			.sum label:after {
+				/*border: 1px solid #000000;*/
+				content: '';
+				width: 14px;
+				height: 10px;
+				margin-left: 40%;
+				margin-top: 5%;
+				background: transparent url(image/arrow_down.png) no-repeat center center;
+			}
+			.sum input:checked+label:after {
+				background-image: url(image/arrow_up.png);
+			}
+			.sum input {
+				display: none;
+			}
+			.sum div.effect {
+				/*border: 1px solid #000000;*/
+				display: flex;
+				background-color: white;
+				margin-top: -1px;
+				overflow: auto;
+				height: 0px;
+			    width: 100%;
+				margin-left:0%;
+				font-size: 16px;
+				color:darkgrey;
+				position: relative;
+				transition: height 0.3s ease-in-out, box-shadow 0.3s linear; 
+			}
+			.sum input:checked~div.effect{
+				transition: height 0.5s ease-in-out, box-shadow 0.1s linear;
+			}
+			.sum input:checked~div.effect{
+				height: 35px;
+				width:100%;
+				margin-left: 0%;
+				font-size: 16px;
+				margin-top: 0.01%;
+				color:darkgrey;
+			}
+			
+			.sum input:checked~div:hover{;
+				background-color:gainsboro;
+			}
+			.effect-text{
+				width: 40%;
+				/*border: 1px solid #000000;*/
+				/*text-align: center;*/
+				height: 60%;
+				margin-top: 3%;
+				margin-left: 30%;
+				color: darkgray;
+			}
+			
+			/*标题栏OVER*/
+			.middletext{
+				/*display: block;*/
+				/*border: 1px solid #AA00FF;*/
+				height: 760px;
+				width: 48%;
+				margin-top:0%;
+				display: none;
+				
+			}
+			.middlehead{
+				background-color: white;
+				/*border: 1px solid #000000;*/
+				height: 80px;
+				width: 100%;
+				margin-left: 0%;
+			}
+			.middlebody{
+				/*border: 1px solid #AA5500;*/
+				margin-top: 2.5%;
+				margin-left: 3.8%;
+				width: 95%;
+				height: 650px;
+				overflow-x: hidden;
+				overflow-y: scroll; 
+			}
+			.middlebody::-webkit-scrollbar{
+				display: block;
+			}
+			.showmiddletext{
+				/*border: 1px solid #AA00FF;*/
+				height: 760px;
+				width: 48%;
+				margin-top: 0%;
+				display: block;
+				overflow-x: hidden;
+				overflow-y: scroll; 
+			}
+			.active{
+				display: flex;
+				/*border: 1px solid #000000;*/
+				height: 45px;
+				background-color: gainsboro;
+				box-shadow: 10px 10px 10px rgba(0,0,0,.5);
+				-moz-box-shadow: 10px 10px 10px rgba(0,0,0,.5);
+				-webkit-box-shadow: 10px 10px 10px rgba(0,0,0,.5);
+			}
+            .sum div.activecom {
+            	/*border: 1px solid #000000;*/
+            	display: flex;
+            	background-color: white;
+            	margin-top: -1px;
+            	overflow: auto;
+            	height: 0px;
+                width: 100%;
+            	margin-left:0%;
+            	font-size: 16px;
+            	color:darkgrey;
+            	position: relative;
+            	transition: height 0.3s ease-in-out, box-shadow 0.3s linear; 
+				
+            }
+            .sum input:checked~div.activecom{
+            	transition: height 0.5s ease-in-out, box-shadow 0.1s linear;
+            }
+			.sum input:checked~div.activecom{
+				border: 1px solid gainsboro;
+				height: 35px;
+				width:100%;
+				margin-left: 0%;
+				font-size: 16px;
+				margin-top: 0.01%;
+				color:darkgrey;
+				background-color: gainsboro;
+				
+			}
+			
+			
+			.classification{
+				/*border: 1px solid #000000;*/
+				width:100%;
+				height: 35px;
+				background-color: white;
+				line-height: 35px;
+				border-radius: 10px;
+			}
+			.middlename{
+				/*border: 1px solid #000000;*/
+				font-size: 30px;
+				font-weight: 500;
+				width: 30%;
+				margin-left: 2.5%;
+				margin-top:1%;
+			}
+			.middleintro{
+				/*border: 1px solid #000000;*/
+				width: 20%;
+				font-size: 10px;
+				color: darkgray;
+				margin-left: 2.5%;
+				margin-top: 1%;
+			}
+			.middlefirst{
+				/*border: 1px solid #000000;*/
+				background-color: white;
+				display: flex;
+				width: 100%;
+				height: 200px;
+				border-radius: 10px;
+			}
+			.middlefirst img{
+				width:30%;
+				height: 200px;
+				border-top-left-radius: 10px;
+				border-bottom-left-radius: 10px;
+			}
+			.middlefirsttext{
+				/*border: 1px solid #005500;*/
+				
+			}
+			.firsthead{
+				/*border: 1px solid #000000;*/
+				font-size: 25px;
+				width: 80%;
+				height: 20%;
+				margin-left: 5%;
+				font-family: "楷体";
+				margin-top: 3%;
+			}
+			.abstract{
+				text-overflow: ellipsis;
+				display: -webkit-box; 
+				-webkit-line-clamp: 2;/* 行数 */
+				-webkit-box-orient: vertical;
+				/*border: 1px solid #000000;*/
+				font-family: "楷体";
+				line-height: 25px;
+				color: darkgray;
+				margin-top: 3%;
+				margin-left: 5%;
+				width: 80%;
+				height: 50px;
+				overflow: hidden;
+			}
+			.bottomname
+			{
+				border-top: 1px solid darkgray;
+				color: darkgray;
+				font-size: 10px;
+				margin-top: 8.8%;
+				margin-left: 5%;
+				width: 80%;;
+				height: 20px;
+				opacity:0.5;
+			}
+			.skip{
+				display: flex;
+				/*border: 1px solid #000000;*/
+				width: 30%;
+				height: 40px;
+				margin-top: 5%;
+				margin-left: 35%;
+			}
+			.skip1{
+				/*border: 1px solid #000000;*/  
+				border-radius: 6px;
+				text-align: center;
+                line-height:30px;
+				margin-top: 1%;
+				margin-left: 15%;
+				width: 13%;
+				height: 80%;
+			}
+			.skip1:hover{
+				background-color: #cfcfcf;
+			}
+			.skipnow{
+				/*border: 1px solid #000000;*/  
+				border-radius: 6px;
+				text-align: center;
+			    line-height:30px;
+				margin-top: 1%;
+				margin-left: 15%;
+				width: 13%;
+				height: 80%;
+				background-color: #cfcfcf;
+			}
+			.skipnow:hover{
+				background-color: #cfcfcf;
+			}
+			.yearstotal{
+				margin-top: 2%;
+				/*height: 1800px;*/
+				background-color: white;
+				/*border: 1px solid #000000;*/
+			}
+			.years{
+				width: 90%;
+				height: 3%;
+				text-align: center;
+				line-height: 35px;
+				margin-left: 5%;
+				margin-top: 2%;
+				border-radius: 5px;
+			    /*border: 1px solid #000000;*/
+                border-color: lightcoral;
+				color: red;
+			}
+			.yearstext{
+				width: 90%;
+				line-height: 40px;
+				font-size: 17px;
+				margin-left: 5%;
+				margin-top: 2%;
+				border-radius: 5px;
+				/*border: 1px solid #000000;*/
+				background-color: white;
+				text-indent: 2em;
+			}
+			.bubble-box {
+			    position: relative;
+			    /*border: 2px solid #000000;*/
+			    border-radius: 5px;
+			    width: 90%;
+			    /*line-height: 50px;*/
+			    margin-left: 20px;
+				background-color: white;
+				border-radius: 10px;
+			}
+			
+			.bubble-box::before {
+			    content: " ";
+			    position: absolute;
+			    right: 100%;
+			    top: 50%;
+			    margin: -5px 0 0;
+			    border: 10px solid transparent;
+			    border-right-color: #ffffff;
+				
+			}
+			
+			.bubble-box::after {
+			    content: " ";
+			    position: absolute;
+			    right: 100%;
+			    top: 50%;
+			    margin-top: -2px;
+			    border: 7px solid transparent;
+			    border-right-color: #fff;
+			}
+			.talk{
+				/*border: 1px solid #000000;*/
+				margin-left: 3%;
+				display: flex;
+				
+			}
+			.bubble-name{
+				border-bottom: 2px solid darkgray;
+				font-size: 10px;
+				color: darkgray;
+				height: 15px;
+				width: 98%;
+				margin-left: 1%;
+				margin-top: 2%;
+				background-color: white;
+			}
+			.bubble-text{
+				/*border: 1px solid #AA00FF;*/
+				width: 98%;
+				margin-left: 1%;
+				margin-top: 1%;
+				background-color: white;
+			}
+			.right{
+				width: 16%;
+				height: 760px;
+				background-color: white;
+				overflow-y: scroll;
+				overflow-x: hidden;
+			}
+			.fire
+			{
+				height:42.5px;
+				font-size:25px;
+				text-align: center;
+				border-bottom: 4px solid snow;
+			}
+			.hot{
+				/*border: 1px solid #000000;*/
+				height: 42.5px;
+				font-size: 15px;
+				color: darkgray;
+				line-height: 60px;
+			}
+			.rightpassage{
+				/*border: 1px solid #005500;*/
+				margin-top: 0%;
+				font-family: "楷体";
+			}
+			.fd1{	
+				/*border:1px solid #ff0000;*/
+				display: flex;
+				margin-top: 10%;
+			}
+			
+			.fd1:hover{
+				background-color: darkgray;
+				box-shadow: 10px 10px 10px rgba(0,0,0,.5);
+				-moz-box-shadow: 10px 10px 10px rgba(0,0,0,.5);
+				-webkit-box-shadow: 10px 10px 10px rgba(0,0,0,.5);
+			}
+			.fd1after{
+				display: flex;
+				margin-top: 10%;
+				background-color: darkgray;
+				box-shadow: 10px 10px 10px rgba(0,0,0,.5);
+				-moz-box-shadow: 10px 10px 10px rgba(0,0,0,.5);
+				-webkit-box-shadow: 10px 10px 10px rgba(0,0,0,.5);
+			}
+			.fd1 img{
+				width: 20%;
+				height: 50px;
+				border: 3px solid snow;
+				box-shadow: 10px 10px 10px rgba(0,0,0,.05);
+				-moz-box-shadow: 10px 10px 10px rgba(0,0,0,.1);
+				-webkit-box-shadow: 10px 10px 10px rgba(0,0,0,.1);
+			}
+			.fdtext1{
+				/*border: 1px solid #00BFFF;*/
+				margin-left: 7%;
+				width: 65%;
+				line-height: 25px;
+			}
+			.information{
+			   /* border: 1px solid #000000;*/
+			    width: 80%;
+				margin-left: 10%;
+				color: darkgray;
+				background-color: white;
+				font-size: 18px;
+				box-shadow: 10px 10px 10px rgba(0,0,0,.5);
+				-moz-box-shadow: 10px 10px 10px rgba(0,0,0,.5);
+				-webkit-box-shadow: 10px 10px 10px rgba(0,0,0,.5);
+			}
+			.fin{
+			    /*border:1px solid #008000;*/
+				display: flex;
+				margin-top: 10%;
+				
+			}
+			.fin1{
+			   /* border:1px solid #AA00FF;*/
+				
+			}
+			.fins{
+	            border: 1px solid rgba(211, 211, 211, 0.8);
+				/*margin-left: 30%;*/
+				float:right;
+				border-radius: 8px;
+				font-size: 15px;
+				color: white;
+				background-color: rgba(211, 211, 211, 0.8);
+				height: 19px;
+			}
+		</style>
+			
+	</head>
+	<body> 
+	    <script>
+		    window.name="upload";
+		</script>
+		<!--导航栏-->
+		<div class="headline">
+			<!--博客名-->
+			<div class="myname">
+					whale博客
+			</div>
+			<!--搜索-->
+			<div class="search">
+				<input type="text" id="key" placeholder="输入关键字查询" required="required" onclick="hint()">
+				<div class="searchbtn">
+					<img src="image/search.png">
+				</div>
+				<script type="text/javascript">
+					function hint(){
+						alert("该接口暂时无法使用");
+					}
+				</script>
+			</div>
+			<!--音乐播放器-->
+			<div class="music">
+				<div class="music-img">
+					<img id="img-x" src="image/sky.jpg">
+				</div>
+				<div class="play" onclick="xuan()">
+					<img src="image/play.png" id="crot">
+				</div>
+				<audio src="image/1.mp3" controls id="audio">low browsers not support</audio>
+			</div>
+		     <script>
+		        var timer = null;
+		        var img= document.getElementById('img-x');
+		        var r = 0;
+		        var flag = true;
+				function xuan(){
+		          if (flag) {
+					  document.getElementById('crot').src="image/play.png";
+					  if(audio.played)
+					  {
+						  audio.pause();
+					  }
+		            clearInterval(timer);
+		            console.log('定时器已停止');
+		            flag = false;
+		          } else if (flag==false) {
+					  document.getElementById('crot').src="image/stop.png";
+					  if(audio.paused)
+					  {
+					  	  audio.play();
+					  }
+		              timer = setInterval(() => {
+		              img.style.transform = 'rotate(' + (r += 20) + 'deg)';
+		              img.style.transition = 'all 1s linear';
+		              /*console.log('定时器启动');*/
+					  /*alert("定时器启动");*/
+		            }, 1000);
+		           flag = true;
+		          }
+				  }
+		      </script>
+
+		</div>
+		<!--导航栏结束-->
+		
+		<div class="middle">
+		<div class="left" id="leftt">
+			<!--左侧名片-->
+			<div class="leftname">
+				<div class="leftimg">
+					<img src="image/leftname.png">
+				</div>
+				<div class="leftmy">
+					<div class="leftwhale">
+						whale
+					</div>
+					<div class="leftintde">
+						爱你东升西落
+					</div>
+				</div>
+			</div>
+			<!--左侧名片OVER-->
+			
+			<!--左侧标题-->
+			<div class="nag">
+				导航
+			</div>
+			<a target="_blank" href="主页.html">
+		    <div style="margin-top: 5%;" class="upper">
+				<div class="upperpic">
+					🚀
+				</div>
+				<!--<img style="background-color: white;" src="./left-pic/1.png">-->
+				<div class="uppertext">
+					主页
+				</div>
+			</div>
+			</a>
+			<div class="upper" id="firstpage">
+				<div class="upperpic">
+					🏠
+				</div>
+				<div class="uppertext">
+					首页
+				</div>
+			</div>
+			<div class="upper" id="secondpage">
+				<div style="font-size: 20px;" class="upperpic">
+					＠
+				</div>
+				<div class="uppertext">
+					留言
+				</div>
+			</div>
+			<!--<div class="upper" id="thirdpage">
+				<div class="upperpic">
+					🤍
+				</div>
+				<div class="uppertext">
+				     Love
+				</div>
+			</div>-->
+			<div class="upper" id="fourthpage">
+				<div class="upperpic">
+					💭
+				</div>
+				<div class="uppertext">
+				     说说
+				</div>
+			</div>
+			<div class="upper" id="fifthpage">
+				<div style="margin-left: 16%;" class="upperpic">
+			        🍴
+				</div>
+				<div style="margin-left: 5%" class="uppertext">
+				    投喂
+				</div>
+			</div>
+			
+			
+			<div class="nag">
+				组成
+			</div>
+			<div class="sum">
+				<div>
+					<input id="cation" name="cbox" type="checkbox" />
+					<label  class="upper" for="cation">
+						<div class="upperpic">
+						    ➰
+						</div>
+						<div class="uppertext">
+						    分类
+						</div>
+					</label>
+					
+					<div class="effect" id="onepage">
+						<div class="effect-text">
+						    学习笔记
+						</div>
+					</div>
+					
+					<div class="effect" id="twopage">
+						<div class="effect-text">
+							随笔
+						</div>
+					</div>
+					<div class="effect" id="threepage">
+						<div class="effect-text">
+							人文社科
+						</div>
+					</div>
+				</div>
+				<div>
+				  <input id="rechives" name="rbox" type="checkbox" />
+				  <label  class="upper" for="rechives">
+					  <div class="upperpic">
+					  	    📜
+					  	</div>
+					  	<div class="uppertext">
+					  	    档案
+					  	</div>
+				  </label>
+				  <div class="effect" id="fourpage">
+				  	<div class="effect-text">
+				  	    2021年11月
+				  	</div>
+				  </div>
+				  <div class="effect" id="fivepage">
+				  	<div class="effect-text">
+				  		2021年10月
+				  	</div>
+				  </div>
+				  <div class="effect" id="sixpage">
+				  	<div class="effect-text">
+				  		2021年9月
+				  	</div>
+				  </div>
+			</div>
+			<div>
+				<input id="tag" name="tbox" type="checkbox" />
+				<label  class="upper" for="tag">
+				  <div class="upperpic">
+						🔖
+					</div>
+					<div class="uppertext">
+						标签
+					</div>
+				</label>
+				<div class="effect" id="sevenpage">
+					<div class="effect-text">
+					    博客主题
+					</div>
+				</div>
+				<div class="effect" id="eightpage">
+					<div class="effect-text">
+						深度学习
+					</div>
+				</div>
+				<div class="effect" id="ninepage">
+					<div class="effect-text">
+						强化学习
+					</div>
+				</div>
+				<div class="effect" id="tenpage">
+					<div class="effect-text">
+						时光
+					</div>
+				</div>
+		</div>
+		<div>
+			<input id="lin" name="lbox" type="checkbox" />
+			<label  class="upper" for="lin">
+			  <div style="margin-left: 17%;" class="upperpic">
+					📎
+				</div>
+				<div style="margin-left: 4%;" class="uppertext">
+					链接
+				</div>
+			</label>
+			<div class="effect">
+				<div class="effect-text">
+					百度网盘
+				</div>
+			</div>
+			<div class="effect">
+				<div class="effect-text">
+					GetHub
+				</div>
+			</div>
+			<div class="effect">
+				<div class="effect-text" onclick="jump()">
+					评论区
+				</div>
+			</div>
+			<script>
+			   function jump(){
+				  window.location="../login/comment.html";
+			   }
+			</script>
+		</div>
+		<div>
+			<input id="firend" name="fbox" type="checkbox" />
+			<label  class="upper" for="firend">
+			  <div class="upperpic">
+					💌
+				</div>
+				<div class="uppertext">
+					友链
+				</div>
+			</label>
+			<div class="effect">
+				<a href="https://www.cnblogs.com/yjlaugus#/c/subject/category/default.html">
+				<div style="margin-left: 110%; width: 100%;" class="effect-text">
+					 YJLAugus
+				</div>
+				</a>
+			</div>
+			</div>
+		</div>
+		</div>
+		<!--左侧OVER-->
+		<!--导航中部框--> 
+			<div class="showmiddletext" id="firstmiddlepage">
+				<div class="middlehead">
+					<div class="middlename">
+						whale
+					</div>
+					<div class="middleintro">
+						所爱隔山海，山海皆可平
+					</div>
+				</div>
+				<div class="middlebody">
+					<div class="classification">
+						🏠&#12288首页/正文
+					</div>
+					<div class="middlefirst" style="margin-top: 2%;"  id="afteryears">
+						<img src="image/素材11.png">
+						<div class="middlefirsttext">
+							<div class="firsthead" title="几年后">
+								几年来
+							</div>
+							<div title="摘要：“山海自有归期 风雨自有相逢 意难平终将和解 万事终将如意”
+	自己也马上面临考研了，有过迷茫也有过坚定，不知道自己几年后会是什么样子，
+	回想起自己的今日，是感谢还是后悔。" class="abstract">
+								摘要：“山海自有归期 风雨自有相逢 意难平终将和解 万事终将如意”
+								自己也马上面临考研了，有过迷茫也有过坚定，不知道自己几年后会是什么样子，
+								回想起自己的今日，是感谢还是后悔。
+							</div>
+							<div class="bottomname">
+								🧑Whale&#12288&#12288&#12288🕛2021年11月26日
+							</div>
+						</div>
+					</div>
+					
+					<div class="middlefirst" style="margin-top: 4%;" id="beautify">
+						<img src="image/素材22.png">
+						<div class="middlefirsttext">
+							<div class="firsthead" title="美化主题">
+								 美化主题
+							</div>
+							<div title="摘要：Web前端对于网站的搭建美化也是比较考验创意的，对于
+	每一个前端学习和使用的人都是不小的考验，自己通过摸索出了一些方法，
+	根据自己的创意进行搭建，使用的都是比较基本的方法，简朴为主" class="abstract">
+								摘要：Web前端对于网站的搭建美化也是比较考验创意的，对于
+								每一个前端学习和使用的人都是不小的考验，自己通过摸索出了一些方法，
+								根据自己的创意进行搭建，使用的都是比较基本的方法，简朴为主
+							</div>
+							<div class="bottomname">
+								🧑Whale&#12288&#12288&#12288🕛2021年11月15日
+							</div>
+						</div>
+					</div>
+					
+					<div class="middlefirst" style="margin-top: 4%;" id="cut">
+						<img style="width:80%;height: 200px;" src="image/素材33.png">
+						<div class="middlefirsttext">
+							<div class="firsthead" title="假·窗口切换：div隐藏和显示">
+								 假·窗口切换：div隐藏和显示
+							</div>
+							<div title="摘要：搭建博客时，不同板块之间来回切换页面无疑是一大忌，
+	所以需要在整个页面中开拓出一块特定的区域可以在其中将所显示的不同div
+	进行切换，进而实现在整个的网页窗口中造就一个小窗口之间来回切换的效果。" class="abstract">
+								摘要：Web前端对于网站的搭建美化也是比较考验创意的，对于
+								每一个前端学习和使用的人都是不小的考验，自己通过摸索出了一些方法，
+								根据自己的创意进行搭建，使用的都是比较基本的方法，简朴为主
+							</div>
+							<div class="bottomname">
+								🧑Whale&#12288&#12288&#12288🕛2021年11月9日
+							</div>
+						</div>
+					</div>
+									
+					<div class="middlefirst" style="margin-top: 4%;" id="lonely">
+						<img src="image/素材44.png">
+						<div class="middlefirsttext">
+							<div class="firsthead" title="享受孤独">
+								 享受孤独
+							</div>
+							<div title="摘要：夜晚的风渐渐凉了起来，从实验室晚归的学子，荡步在湖边，
+	平静且美好，没有了街道上的喧闹，只有风抚上我的脸颊，
+	心里装着一个人，哪怕之身一人也是享受，我想你了" class="abstract">
+								摘要：夜晚的风渐渐凉了起来，从实验室晚归的学子，荡步在湖边，
+								平静且美好，没有了街道上的喧闹，只有风抚上我的脸颊，
+								心里装着一个人，哪怕之身一人也是享受，我想你了
+							</div>
+							<div class="bottomname">
+								🧑Whale&#12288&#12288&#12288🕛2021年11月3日
+							</div>
+						</div>
+					</div>
+									
+					<div class="middlefirst" style="margin-top: 4%;" id="setting">
+						<img src="image/素材55.png">
+						<div class="middlefirsttext">
+							<div class="firsthead" title="切换背景">
+								 切换背景
+							</div>
+							<div title="摘要：一个好的博客除了其中的技术知识真实丰富，还要让其灵动起来，
+	在div中通过css或者js切换背景也是动起来的好方法，css通过改变背景图片的根目录转变，
+	js通过在其中改变不同id名称的图片进行调用，切换都十分的流畅。" class="abstract">
+								摘要：Web前端对于网站的搭建美化也是比较考验创意的，对于
+								每一个前端学习和使用的人都是不小的考验，自己通过摸索出了一些方法，
+								根据自己的创意进行搭建，使用的都是比较基本的方法，简朴为主
+							</div>
+							<div class="bottomname">
+								🧑Whale&#12288&#12288&#12288🕛2021年10月23日
+							</div>
+						</div>
+					</div>
+					
+					<div class="skip" id="skippage">
+						<div class="skipnow" id="skip1page">
+							1
+						</div>
+						<div class="skip1" id="skip2page">
+							2
+						</div>
+						<div class="skip1" id="skip3page">
+							3
+						</div>
+					</div>
+				</div>
+		   </div>
+		   
+		   
+		   
+		   <div class="middletext" id="secondmiddlepage">
+					<div class="middlehead">
+						<div class="middlename">
+							whale
+						</div>
+						<div class="middleintro">
+							所爱隔山海，山海皆可平
+						</div>
+					</div>
+					<div class="middlebody">
+						<div class="classification">
+							🏠&#12288首页/正文
+						</div>
+						<div class="middlefirst" style="margin-top: 2%;" id="musicplayer">
+							<img src="image/素材66.png">
+							<div class="middlefirsttext">
+								<div class="firsthead" title="最简单音乐播放器">
+									最简单音乐播放器
+								</div>
+								<div title="摘要:博客中的背景音乐也是网页中的加分点，在设置音乐播放时，
+	最简单的方法就是使用audio，较为复杂的就是自行设置播放开关，将其直接引入音乐路径，
+	通过js将音乐的图片进行旋转。" class="abstract">
+									摘要:博客中的背景音乐也是网页中的加分点，在设置音乐播放时，
+									最简单的方法就是使用audio，较为复杂的就是自行设置播放开关，将其直接引入音乐路径，
+									通过js将音乐的图片进行旋转。
+								</div>
+								<div class="bottomname">
+									🧑Whale&#12288&#12288&#12288🕛2021年10月17日
+								</div>
+							</div>
+						</div>
+						
+						<div class="middlefirst" style="margin-top: 4%;" id="spring">
+							<img style="width:80%;height: 200px;" src="image/素材77.png">
+							<div class="middlefirsttext" >
+								<div class="firsthead" title="强化学习-SpringBoot框架" >
+									 强化学习-SpringBoot框架
+								</div>
+								<div title="摘要：前端主要是负责界面的美观一些操作，对于处理数据的能力，
+	还是后端的效率最高，而且使用方法极其简便，可以令整个的页面更加的动态化，前后端连接的方法有很多，
+	这次所使用的为SpringBoot框架，使用较为广泛" class="abstract">
+	 							   摘要：前端主要是负责界面的美观一些操作，对于处理数据的能力，
+	                               还是后端的效率最高，而且使用方法极其简便，可以令整个的页面更加的动态化，前后端连接的方法有很多，
+	                               这次所使用的为SpringBoot框架，使用较为广泛
+								</div>
+								<div class="bottomname">
+									🧑Whale&#12288&#12288&#12288🕛2021年10月14日
+								</div>
+							</div>
+						</div>
+						
+						<div class="middlefirst" style="margin-top: 4%;" id="data">
+							<img style="width:75%;" src="image/素材8.png">
+							<div class="middlefirsttext">
+								<div class="firsthead" title="深度学习——数据的储存方法">
+									 深度学习——数据的储存方法
+								</div>
+								<div title="摘要：对于不同的H5界面中对于不同类型的数据进行合理的储存
+	和使用也是一大难关，所包括的方法主要包括本地储存、会话级本地储存、永久本地储存以及
+	在前端中用的不太多的数据库。" class="abstract">
+									摘要：对于不同的H5界面中对于不同类型的数据进行合理的储存
+									和使用也是一大难关，所包括的方法主要包括本地储存、会话级本地储存、永久本地储存以及
+									在前端中用的不太多的数据库。
+								</div>
+								<div class="bottomname">
+									🧑Whale&#12288&#12288&#12288🕛2021年10月10日
+								</div>
+							</div>
+						</div>
+										
+						<div class="middlefirst" style="margin-top: 4%;" id="enroll">
+							<img style="width:83%;" src="image/素材9.png">
+							<div class="middlefirsttext">
+								<div class="firsthead" title="注册——登录的连接">
+									 注册——登录的连接
+								</div>
+								<div title="摘要：在几乎每一个web网站中，注册和登录界面的搭建都是老生常谈的话题，
+	但是登录和注册的数据进行处理的过程也同样很复杂，所有用户是不能重复的，
+	所以我们需要一个储存方式对注册和登录进行连接。" class="abstract">
+									摘要：在几乎每一个web网站中，注册和登录界面的搭建都是老生常谈的话题，
+									但是登录和注册的数据进行处理的过程也同样很复杂，所有用户是不能重复的，
+									所以我们需要一个储存方式对注册和登录进行连接。
+								</div>
+								<div class="bottomname">
+									🧑Whale&#12288&#12288&#12288🕛2021年10月7日
+								</div>
+							</div>
+						</div>
+										
+						<div class="middlefirst" style="margin-top: 4%;" id="happy">
+							<img style="width:57%;" src="image/素材10.png">
+							<div class="middlefirsttext">
+								<div class="firsthead" title="Happy Birthday">
+									 Happy Birthday
+								</div>
+								<div title="摘要：Today is my lover's birthday.陪宝贝过的第一个生日，
+	相遇535天，相爱362天，以后的每一天都愿意给她，祝我家宝贝永远开心快乐。" class="abstract">
+									摘要：Today is my lover's birthday.陪宝贝过的第一个生日，
+									相遇535天，相爱362天，以后的每一天都愿意给她，祝我家宝贝永远开心快乐。
+								</div>
+								<div class="bottomname">
+									🧑Whale&#12288&#12288&#12288🕛2021年10月2日
+								</div>
+							</div>
+						</div>
+						
+						<div class="skip">
+							<div class="skip1" id="skip11page">
+								1
+							</div>
+							<div class="skinow" id="skip22page">
+								2
+							</div>
+							<div class="skip1" id="skip33page">
+								3
+							</div>
+						</div>
+					</div>
+			   </div>
+			   
+			   
+			   
+			   
+				<div class="middletext" id="thirdmiddlepage">
+						<div class="middlehead">
+							<div class="middlename">
+								whale
+							</div>
+							<div class="middleintro">
+								所爱隔山海，山海皆可平
+							</div>
+						</div>
+						<div class="middlebody">
+							<div class="classification">
+								🏠&#12288首页/正文
+							</div>
+							<div class="middlefirst" style="margin-top: 2%;" id="mvc">
+								<img src="image/稻海.jpg">
+								<div class="middlefirsttext">
+									<div class="firsthead" title="中秋节——对于MVC的思考">
+										中秋节——对于MVC的思考
+									</div>
+									<div title="“又是一年在学校度过的中秋，希望每个人都万事顺心”
+	MVC是整个软件体系结构中最重要也是最基础的部分，M是指业务模型，V是指用户界面，C则是控制器，
+	使用MVC的目的是将M和V的实现代码分离，从而使同一个程序可以使用不同的表现形式" class="abstract">
+										“又是一年在学校度过的中秋，希望每个人都万事顺心”
+										MVC是整个软件体系结构中最重要也是最基础的部分，M是指业务模型，V是指用户界面，C则是控制器，
+										使用MVC的目的是将M和V的实现代码分离，从而使同一个程序可以使用不同的表现形式
+									</div>
+									<div class="bottomname">
+										🧑Whale&#12288&#12288&#12288🕛2021年9月21日
+									</div>
+								</div>
+							</div>
+							
+							<div class="middlefirst" style="margin-top: 4%;" id="teacher">
+								<img src="image/划船.png">
+								<div class="middlefirsttext">
+									<div class="firsthead" title="教师节——祝所有的老师节日快乐">
+										 教师节——祝所有的老师节日快乐
+									</div>
+									<div title="摘要：自小被教育，教师是辛勤的园丁，上了大学发现，所有的老师
+	都是伟大的，尽管老师记不住你的名字，但是一定记得住你是他的学生，不管你是否认真，
+	他都愿意孜孜不倦的为您讲解每一个知识，老师，您辛苦啦！" class="abstract">
+										摘要：自小被教育，教师是辛勤的园丁，上了大学发现，所有的老师
+										都是伟大的，尽管老师记不住你的名字，但是一定记得住你是他的学生，不管你是否认真，
+										他都愿意孜孜不倦的为您讲解每一个知识，老师，您辛苦啦！
+									</div>
+									<div class="bottomname">
+										🧑Whale&#12288&#12288&#12288🕛2021年9月10日
+									</div>
+								</div>
+							</div>
+							
+							<div class="skip">
+								<div class="skip1" id="skip111page">
+									1
+								</div>
+								<div class="skinow" id="skip222page">
+									2
+								</div>
+								<div class="skip1" id="skip333page">
+									3
+								</div>
+							</div>
+						</div>
+				   </div>
+		   
+		   <!--几年来-->
+		   	<div class="middletext" id="fewyears">
+				<div class="middlehead">
+					<div class="middlename">
+						几年来
+					</div>
+					<div class="middleintro" style="width: 100%;margin-top: 2%;">
+						事在人为，愿一切安好，不在追求什么所谓努力的方向，你若安好，便是晴天
+					</div>
+				</div>
+				<div style="margin-top: 2.5%;" class="classification">
+				      &#12288&#12288🏠&#12288首页/正文/几年来
+				</div>
+				<div class="yearstotal">
+					<div class="years">
+						“❤&#12288山海自有归期 风雨自有相逢 意难平终将和解 万事终将如意”
+					</div>
+					<div class="yearstext">
+						自己也马上面临考研了，有过迷茫也有过坚定，不知道自己几年后会是什么样子，
+						回想起自己的今日，是感谢还是后悔。<br/><br/>
+						不知不觉已经大三了，大三的时光也马上过了一半了，再回到学校便是2022年，考研曾经离自己那么遥远，
+						如今已经很近很近了，周边的人们也已经开始复习，不管是数学，还是即将到来的英语六级，自己都没有太大的底气，
+						这次的六级估计也还是走过场了，还是不甘心，还是没精力，时间好像真的不太够用了。<br/><br/>
+						大二上学期进入实验室，自己也曾经看着18级的实验室学长离开，自己成为了实验室的老人，也伴着20级的走过了一年，
+						明年再归来自己也要走了，应该不会再有机会在这个地方学习，一年半的时光，两次比赛，感谢自己的坚持，在实验室的努力。<br/><br/>
+						我们商量着想去北京，但是我心里没有太大的底气，我只能拼尽全力去追赶自己的目标，成功上岸，必是皆大欢喜，一旦失利，
+						自己何去何从也无从知晓，未来的自己会不会感谢今天十点多赖在实验室的自己，我希望会的。
+					</div>
+					<img src="image/紫云.jpg" style="border-radius: 5px; width: 90%;height: 300px; margin-left: 5%;">
+					<div class="signature" style="width: 90%;height: 80px; border-top: 1px solid darkgray;margin-left: 5%;margin-top: 5%;color: darkgray;">
+						🕒&#12288最后修改时间2021年11月26日
+					</div>
+				</div>
+		     </div>
+			 
+			 
+			<!--美化主题-->
+			<div class="middletext" id="theme">
+				<div class="middlehead">
+					<div class="middlename">
+						美化主题
+					</div>
+					<div class="middleintro" style="width: 100%;margin-top: 2%;">
+						生活不可能像你想象的那么美好，但是也不可能像你想象的那么糟糕
+					</div>
+				</div>
+				<div style="margin-top: 2.5%;" class="classification">
+				      &#12288&#12288🏠&#12288首页/正文/美化主题
+				</div>
+				<div class="yearstotal">
+					<div class="yearstext">
+						对于博客主题的美化，不同人有不同的简洁，也都有自己的风格，在进行美化之前就要提前构想样式以及粗略
+						估算其中所使用的技术，自己的能力是否达到，如果在现有的代码进行更改，建议不要盲目的去改变自己已经
+						成型的部分，否则容易造成整体代码结构的混乱。<br/><br/>
+						(1)确定风格<br/>
+						一个博客也能很好的体现出一个人的内心，自己的爱好，根据这些为自己选择一个合适的风格，逐步进行实现，比如自己
+						对于一直以来就比较喜欢极简的风格，所以在制作登录界面时，选择合适的背景后，其实并没有太多花里胡哨的东西，但是为了
+						不显得那么空旷，添加了自己喜欢的一个特效，简约而不失美感. <br/>
+						<img src="./image/登录截图.png" style="width: 90%;height: 300px;"><br/>
+						(2)平衡比例<br/>
+						在博客进行搭建时，左右上下对于边缘的间距也是影响美感很重要的一个部分，不一定是要那种分毫不差的，但是一定
+						要在视觉上给人以清晰的感觉，不能太过于杂乱无章，每个板块之间的间距最好可以保持一致，各部分的功能确定好之后，
+						根据整个网页的大小为其分配合适的空间。<br/>
+						<img src="image/主页截图.png" style="width: 90%;height: 300px;"><br/>
+						(3)精神追求<br/>
+						博客中可以进行添加的因素多种多样，不仅可以在选项中添加自己喜爱的图片，对于自己博客所展示的内容也可以进行更改，
+						博客是为记录每个人想分享的日常或者一些技术之间的相互交流所存在的，博主同样可以在技术页面中继续添加更多有关于
+						自己真实生活写照的一些东西，让自己的博客显得更加生动有趣。<br/>
+						<img src="image/love截图.png" style="width: 60%;height: 300px;"><br/>
+					</div>
+					<div class="signature" style="width: 90%;height: 80px; border-top: 1px solid darkgray;margin-left: 5%;margin-top: 5%;color: darkgray;">
+						🕒&#12288最后修改时间2021年11月15日
+					</div>
+				</div>
+			 </div>
+			 
+			 
+			 
+			 <!--假·窗口切换：div隐藏和显示-->
+			<div class="middletext" id="divcut">
+				<div class="middlehead">
+					<div class="middlename"  style="width: 100%;" >
+						假·窗口切换：div隐藏和显示
+					</div>
+					<div class="middleintro" style="width: 100%;margin-top: 2%;">
+						面朝阳光，努力生长，保持本色，不卑不亢
+					</div>
+				</div>
+				<div style="margin-top: 2.5%;" class="classification">
+				      &#12288&#12288🏠&#12288首页/正文/假·窗口切换：div隐藏和显示
+				</div>
+				<div class="yearstotal">
+					<div class="yearstext">
+						搭建博客时，不同板块之间来回切换页面无疑是一大忌，
+						所以需要在整个页面中开拓出一块特定的区域可以在其中将所显示的不同div
+						进行切换，进而实现在整个的网页窗口中造就一个小窗口之间来回切换的效果。<br/>
+						介绍两个css语句：display：none；<br/>
+						&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288display：block；<br/>
+						display:none&#12288&#12288  隐藏该html元素，确切的说，是在浏览器中消除该元素，不占屏幕的空间。若其下有其他元素，就会上移到该空间区域
+						（好像桌子上有100块钱，现在我把它放在抽屉里藏起来，桌子上放100钱的地方可以放在其他任何东西）。<br/><br/>
+						display:block&#12288&#12288显示已经隐藏的html元素，如果别的元素占有了该空间时，他将下移，空间重新别原来的元素占有。
+						（把100块钱重新从抽屉里那出来放回桌子上）<br/><br/>
+						<img src="image/切换test.png" style="width: 95%;"><br/>
+						正常情况下：<tr/>
+						<img src="image/切换test1.png"><br/>
+						使用display：none &#12288 a下所有的控件都会被隐藏<br/>
+						<img src="image/切换test2.png"><br/>
+						<img src="image/切换test4.png"><br/>
+						使用display：block &#12288 显示被隐藏的空间，将b依旧设置none将其隐藏<br/>
+						<img src="image/切换test3.png"><br/>
+						<img src="image/切换test5.png"><br/>
+					</div>
+					<div class="signature" style="width: 90%;height: 80px; border-top: 1px solid darkgray;margin-left: 5%;margin-top: 5%;color: darkgray;">
+						🕒&#12288最后修改时间2021年11月9日
+					</div>
+				</div>
+			 </div>
+			 
+			 
+			 
+			 <!--享受孤独-->
+			<div class="middletext" id="lone">
+				<div class="middlehead">
+					<div class="middlename"  style="width: 100%;" >
+						享受孤独
+					</div>
+					<div class="middleintro" style="width: 100%;margin-top: 2%;">
+						凄凉的光景里，有你最美的影子，风华一指流沙，苍老一段年华
+					</div>
+				</div>
+				<div style="margin-top: 2.5%;" class="classification">
+				      &#12288&#12288🏠&#12288首页/正文/享受孤独
+				</div>
+				<div class="yearstotal">
+					<div class="yearstext">
+						夜晚背包离开实验室，三元湖边的路灯照亮晚归的学子。<br/>
+						（ps：不小心打扰到了一对小情侣😂）<br/><br/>
+						<img src="image/三元湖夜景.jpg" style="width: 90%;height: 450px;"><br/>
+						<video src="./image/三元湖夜景.mp4" preload="auto" autoplay="autoplay" width="90%;height: 450px;" loop="loop" controls="controls"></video>
+					</div>
+					<div class="signature" style="width: 90%;height: 80px; border-top: 1px solid darkgray;margin-left: 5%;margin-top: 5%;color: darkgray;">
+						🕒&#12288最后修改时间2021年11月3日
+					</div>
+				</div>
+			 </div>
+			 
+			 
+			<!--切换背景-->
+			<div class="middletext" id="setbackground">
+				<div class="middlehead">
+					<div class="middlename"  style="width: 100%;" >
+						切换背景
+					</div>
+					<div class="middleintro" style="width: 100%;margin-top: 2%;">
+						梧桐树，三更雨，不道离情正苦。。一叶叶，一声声，空阶滴到明
+					</div>
+				</div>
+				<div style="margin-top: 2.5%;" class="classification">
+				      &#12288&#12288🏠&#12288首页/正文/切换背景
+				</div>
+				<div class="yearstotal">
+					<div class="yearstext">
+						一个好的博客除了其中的技术知识真实丰富，还要让其灵动起来，
+						在div中通过css或者js切换背景也是动起来的好方法，css通过改变背景图片的根目录转变，
+						js通过在其中改变不同id名称的图片进行调用，切换都十分的流畅。<br/>
+						(1)使用css改变根目录<br/>
+						background-image 属性为元素设置背景图像。
+						元素的背景占据了元素的全部尺寸，包括内边距和边框，但不包括外边距。
+						默认地，背景图像位于元素的左上角，并在水平和垂直方向上重复。
+						根据 background-repeat 属性的值，图像可以无限平铺、沿着某个轴（x 轴或 y 轴）平铺，或者根本不平铺。
+						初始背景图像（原图像）根据 background-position 属性的值放置。<br/>
+						在制作手风琴效果时，需要改变张开和闭合的图像：<br/>
+						<img src="image/切换背景css.png" style="width: 95%;"><br/>
+						手风琴收缩：<br/>
+						<img src="image/切换背景css1.png" style="width: 95%;"><br/>
+						手风琴伸展：<br/>
+						<img src="image/切换背景css2.png" style="width:95%"><br/>
+						(2)使用js切换背景图片<br/>
+						getElementById() 方法可返回对拥有指定 ID 的第一个对象的引用。<br/>
+						使用getElementById().src+图片地址即可完成对图片的切换，相对在使用时需要设置反应条件.<br/>
+						比如自己在设置音乐播放器时，需要一个触发器去使歌曲的图片开始旋转，在audio中无法其返回值，所以自己将其覆盖，使用新的
+						背景图和div将其播放按钮遮住，通过js为其赋予行为方式。<br/><br/>
+						<img src="image/切换背景js.png" style="width:95%"><br/>
+						在未播放前为开始图片：<br/>
+						<img src="image/切换背景js1.png"><br/>
+						在播放开始后为暂停图片，歌曲图片开始旋转：<br/>
+						<img src="image/切换背景js2.png"><br/>
+					</div>
+					<div class="signature" style="width: 90%;height: 80px; border-top: 1px solid darkgray;margin-left: 5%;margin-top: 5%;color: darkgray;">
+						🕒&#12288最后修改时间2021年10月23日
+					</div>
+				</div>
+			 </div>
+			 
+			 
+			 
+			<div class="middletext" id="musicplaying">
+				<div class="middlehead">
+					<div class="middlename"  style="width: 100%;" >
+						最简单音乐播放器
+					</div>
+					<div class="middleintro" style="width: 100%;margin-top: 2%;">
+						花自飘零水自流，一种相思，两处闲愁。此情无计可消除，才下眉头，却下心头
+					</div>
+				</div>
+				<div style="margin-top: 2.5%;" class="classification">
+				      &#12288&#12288🏠&#12288首页/正文/最简单音乐播放器
+				</div>
+				<div class="yearstotal">
+					<div class="yearstext">
+						博客中的背景音乐也是网页中的加分点，在设置音乐播放时，
+						最简单的方法就是使用audio，较为复杂的就是自行设置播放开关，将其直接引入音乐路径，
+						通过js将音乐的图片进行旋转。<br/>
+						自制最简单音乐播放器：<br/>
+						<img src="image/music.png"><br/>
+						点击播放键音乐开始播放，歌曲图片会随着旋转，暂停音乐之后图片的旋转也会停止。<br/>
+						<img src="image/music1.png"><br/>
+						主体就是一个简单的audio，通过controls为其添加所需要的控件，根据需求设置必须的属性即可<br/>
+						在合适的位置添加一个歌曲的图片，使用css和js设置其旋转的属性，将其与audio的播放、暂停相连接，
+						使之可以和音乐的播放和暂停相对应。<br/>
+						<img src="image/music2.png" style="width: 95%;"><br/>
+						在js中使用flag确定状态，当flag等于true时，定时器启动，图片会以规定的角度不断的旋转，如果这时候音乐为暂停状态，
+						就设置audio.play(),使音乐为播放状态，同时使flag变为false，再进行点击时，将清除图片旋转的定时器，使其暂停，然后
+						判断音乐是否为播放状态，设置其为audio.pause()使其停止。<br/>
+						使用audio制作音乐播放器时，由于再js中不能准确的获取audio中空间的返回消息，则我使用了两张图片覆盖了audio自带的播放
+						和暂停的控件，不同状态下进行切换。
+					</div>
+					<div class="signature" style="width: 90%;height: 80px; border-top: 1px solid darkgray;margin-left: 5%;margin-top: 5%;color: darkgray;">
+						🕒&#12288最后修改时间2021年10月17日
+					</div>
+				</div>
+			 </div>
+			 
+			 
+			 
+			 
+			 <!--Spring Boot-->
+			 <div class="middletext" id="boot">
+			 	<div class="middlehead">
+			 		<div class="middlename"  style="width: 100%;" >
+			 			强化学习-SpringBoot框架
+			 		</div>
+			 		<div class="middleintro" style="width: 100%;margin-top: 2%;">
+			 		    一袭微雨，荡尽心中尘埃，一缕清风，吹开陌上花红，如此，心在此岸已无岸，人在天涯已无涯
+			 		</div>
+			 	</div>
+			 	<div style="margin-top: 2.5%;" class="classification">
+			 	      &#12288&#12288🏠&#12288首页/正文/强化学习-SpringBoot框架
+			 	</div>
+			 	<div class="yearstotal">
+			 		<div class="yearstext">
+			 			前端主要是负责界面的美观一些操作，对于处理数据的能力，
+			 			还是后端的效率最高，而且使用方法极其简便，可以令整个的页面更加的动态化，前后端连接的方法有很多，
+			 			这次所使用的为SpringBoot框架，使用较为广泛<br/><br/>
+						Spring Boot是一个基于Java的开源框架，用于创建微服务。它由Pivotal Team开发，用于构建独立的生产就绪Spring应用。<br/><br/>
+                        自己对于这一部分也是在学习，掌握了如何SpringBoot框架连接数据库，充当服务器的作用，
+						将前端产生的数据可以直接返回到后端.<br/><br/>
+						分享一个学习的网站：<br/>
+						<a href="https://www.yiibai.com/spring-boot/spring_boot_introduction.html" target="_blank">https://www.yiibai.com/spring-boot</a><br/>
+						bilibili:<br/>
+						<a href="https://www.bilibili.com/video/BV1PE411i7CV?p=1&share_medium=android&share_plat=android&share_session_id=c50ecaa5-aff9-4a52-9d77-ffcdd3d8b866&share_source=QQ&share_tag=s_i&timestamp=1638104018&unique_k=XR9e1o6" target="_blank">狂神说Java</a>
+						
+			 		</div>
+			 		<div class="signature" style="width: 90%;height: 80px; border-top: 1px solid darkgray;margin-left: 5%;margin-top: 5%;color: darkgray;">
+			 			🕒&#12288最后修改时间2021年10月14日
+			 		</div>
+			 	</div>
+			  </div>
+			 
+			 
+			 
+			<!--深度学习——数据的储存方法-->
+			<div class="middletext" id="storge">
+				<div class="middlehead">
+					<div class="middlename"  style="width: 100%;" >
+						深度学习——数据的储存方法
+					</div>
+					<div class="middleintro" style="width: 100%;margin-top: 2%;">
+					    若我白发苍苍，容颜迟暮，你会不会，依旧如此，牵我双手，倾世温柔
+					</div>
+				</div>
+				<div style="margin-top: 2.5%;" class="classification">
+				      &#12288&#12288🏠&#12288首页/正文/深度学习——数据的储存方法
+				</div>
+				<div class="yearstotal">
+					<div class="yearstext">
+						Html5通过JS的新的API就能直接存储大量的数据到客户端浏览器，而且支持复杂的本地数据库，让JS简直就是逆天了。
+						Html5支持两种的WebStorage，
+						一种是永久性的本地存储（localStorage），另外一种是会话级别的本地存储（sessionStorage）。<br/>
+						<p>一、会话级别的本地存储：sessionStorage</p>
+						在Html5中增加了一个Js对象：sessionStorage；通过此对象可以直接操作存储在浏览器中的会话级别的WebStorage。
+						存储在sessionStorage中的数据首先是Key-Value形式的，另外就是它跟浏览器当前会话相关，
+						当会话结束后，数据会自动清除，跟未设置过期时间的Cookie类似。<br/>
+						sessionStorage提供了四个方法来辅助我们进行对本地存储做相关操作。<br/>
+						（1）setItem(key,value)：添加本地存储数据。两个参数，非常简单就不说了。<br/>
+						（2）getItem(key):通过key获取相应的Value。<br/>
+						（3）removeItem(key):通过key删除本地数据。<br/>
+						（4）clear():清空数据。<br/>
+						<p>二、永久本地存储：localStorage</p>
+						在最新的JS的API中增加了localStorage对象，以便于用户存储永久存储的Web端的数据。
+						而且数据不会随着Http请求发送到后台服务器，而且存储数据的大小机会不用考虑，
+						因为在HTML5的标准中要求浏览器至少要支持到4MB.所以，这完全是颠覆了Cookie的限制，
+						为Web应用在本地存储复杂的用户痕迹数据提供非常方便的技术支持。
+						那接下里分别介绍一下localStorage的常用的方法，当然基本上跟sessionStorage是一致的。<br/>
+						localStorage提供了四个方法来辅助我们进行对本地存储做相关操作。<br/>
+						（1）setItem(key,value)：添加本地存储数据。两个参数，非常简单就不说了。<br/>
+						（2）getItem(key):通过key获取相应的Value。<br/>
+						（3）removeItem(key):通过key删除本地数据。<br/>
+						（4）clear():清空数据。<br/>
+						<p>三、本地数据库</p>
+						虽然Html5已经提供了功能强大的localStorage和sessionStorage，
+						但是他们两个都只能提供存储简单数据结构的数据，对于复杂的Web应用的数据却无能为力。
+						逆天的是Html5提供了一个浏览器端的数据库支持，允许我们直接通JS的API在浏览器端创建一个本地的数据库，
+						而且支持标准的SQL的CRUD操作，让离线的Web应用更加方便的存储结构化的数据。接下里介绍一下本地数据的相关API和用法。<br/>
+						操作本地数据库的最基本的步骤是：<br/>
+						第一步：openDatabase方法：创建一个访问数据库的对象。<br/>
+						第二步：使用第一步创建的数据库访问对象来执行transaction方法，
+						通过此方法可以设置一个开启事务成功的事件响应方法，在事件响应方法中可以执行SQL.<br/>
+						第三步：通过executeSql方法执行查询，当然查询可以是：CRUD。<br/>
+					</div>
+					<div class="signature" style="width: 90%;height: 80px; border-top: 1px solid darkgray;margin-left: 5%;margin-top: 5%;color: darkgray;">
+						🕒&#12288最后修改时间2021年10月10日
+					</div>
+				</div>
+			 </div>
+			 
+			 
+			 
+			 <!--注册——登录的连接-->
+			 <div class="middletext" id="register">
+			 	<div class="middlehead">
+			 		<div class="middlename"  style="width: 100%;" >
+			 			注册——登录的连接
+			 		</div>
+			 		<div class="middleintro" style="width: 100%;margin-top: 2%;">
+			 		    不恋尘世浮华，不写红尘纷扰，不叹世道苍凉，不惹情思哀怨，闲看花开，静待花落，冷暖自知，干净如始
+			 		</div>
+			 	</div>
+			 	<div style="margin-top: 2.5%;" class="classification">
+			 	      &#12288&#12288🏠&#12288首页/正文/注册——登录的连接
+			 	</div>
+			 	<div class="yearstotal">
+			 		<div class="yearstext">
+			 			在几乎每一个web网站中，注册和登录界面的搭建都是老生常谈的话题，
+			 			但是登录和注册的数据进行处理的过程也同样很复杂，所有用户是不能重复的，
+			 			所以我们需要一个储存方式对注册和登录进行连接。<br/>
+						用户完成注册之后的数据储存是很关键的，储存完成之后，需要在注册按钮的js中将新注册的用户信息使用for循环进行比对，
+						以确保用户名的不重复性，以及在登录界面中的用户信息和用户密码的相对应。<br/>
+						<p>使用window.localStorage进行储存和调用</p>
+						使用document.getElementById对各个文本框中的内容进行储存，直接创造一个list列表，使用for循环进行对比。<br/>
+						<img src="image/注册.png" style="width: 95%;"><br/>
+						登录时获取用户名和密码，用for循环在list中寻找获取的有用户名与其对应的密码进行比较完成登录。<br/>
+						<img src="image/登录.png" style="width: 95%;"><br/>
+			 		</div>
+			 		<div class="signature" style="width: 90%;height: 80px; border-top: 1px solid darkgray;margin-left: 5%;margin-top: 5%;color: darkgray;">
+			 			🕒&#12288最后修改时间2021年10月7日
+			 		</div>
+			 	</div>
+			  </div>
+			 
+			 
+			
+			<!--Happy Birthday-->
+			<div class="middletext" id="birthday">
+				<div class="middlehead">
+					<div class="middlename"  style="width: 100%;" >
+						Happy Birthday
+					</div>
+					<div class="middleintro" style="width: 100%;margin-top: 2%;">
+					    血染江山的画，怎敌你眉间一点朱砂。负了天下也罢，始终不过一场繁华
+					</div>
+				</div>
+				<div style="margin-top: 2.5%;" class="classification">
+				      &#12288&#12288🏠&#12288首页/正文/Happy Birthday
+				</div>
+				<div class="yearstotal">
+					<div class="yearstext">
+						Today is my lover's birthday.陪宝贝过的第一个生日，
+						相遇535天，相爱362天，以后的每一天都愿意给她，祝我家宝贝永远开心快乐。<br/>
+						虽然我不在宝贝身边，但是我也会时时刻刻都陪着宝贝的，生日快乐<br/>
+						<img src="image/蛋糕.jpg" style="width: 100%;"><br/>
+						<img src="image/猪蹄煲.jpg" style="width: 100%;"><br/>
+					</div>
+					<div class="signature" style="width: 90%;height: 80px; border-top: 1px solid darkgray;margin-left: 5%;margin-top: 5%;color: darkgray;">
+						🕒&#12288最后修改时间2021年10月2日
+					</div>
+				</div>
+			 </div>
+			
+			
+			
+			<!--中秋节——对于MVC的思考-->
+			<div class="middletext" id="festival">
+				<div class="middlehead">
+					<div class="middlename"  style="width: 100%;" >
+						中秋节——对于MVC的思考
+					</div>
+					<div class="middleintro" style="width: 100%;margin-top: 2%;">
+					    心微动，奈何情已远，物也非，人也非，事事非，往日不可重
+					</div>
+				</div>
+				<div style="margin-top: 2.5%;" class="classification">
+				      &#12288&#12288🏠&#12288首页/正文/中秋节——对于MVC的思考
+				</div>
+				<div class="yearstotal">
+					<div class="yearstext">
+						“又是一年在学校度过的中秋，希望每个人都万事顺心”<br/>
+						MVC是整个软件体系结构中最重要也是最基础的部分，M是指业务模型，V是指用户界面，C则是控制器，
+						使用MVC的目的是将M和V的实现代码分离，从而使同一个程序可以使用不同的表现形式<br/>
+						经典MVC模式中，M是指业务模型，V是指用户界面，C则是控制器，使用MVC的目的是将M和V的实现代码分离，
+						从而使同一个程序可以使用不同的表现形式。其中，View的定义比较清晰，就是用户界面。<br/>
+						V即View视图是指用户看到并与之交互的界面。比如由html元素组成的网页界面，或者软件的客户端界面。
+						MVC的好处之一在于它能为应用程序处理很多不同的视图。在视图中其实没有真正的处理发生，它只是作为一种输出数据并允许用户操作的方式。<br/>
+						M即model模型是指模型表示业务规则。在MVC的三个部件中，模型拥有最多的处理任务。被模型返回的数据是中立的，
+						模型与数据格式无关，这样一个模型能为多个视图提供数据，由于应用于模型的代码只需写一次就可以被多个视图重用，所以减少了代码的重复性。<br/>
+						C即controller控制器是指控制器接受用户的输入并调用模型和视图去完成用户的需求，控制器本身不输出任何东西和做任何处理。
+						它只是接收请求并决定调用哪个模型构件去处理请求，然后再确定用哪个视图来显示返回的数据。<br/><br/>
+						MVC指MVC模式的某种框架，它强制性地使应用程序的输入、处理和输出分开。使用MVC应用程序被分成三个核心部件：模型、视图、控制器。
+						它们各自处理自己的任务。最典型的MVC就是JSP + servlet + javabean的模式。<br/>
+						<img src="image/mvc.jpg" style="width: 95%;"><br/><br/>
+						常见的框架：Struts、Spring、ZF、.NET。<br/>
+						
+					</div>
+					<div class="signature" style="width: 90%;height: 80px; border-top: 1px solid darkgray;margin-left: 5%;margin-top: 5%;color: darkgray;">
+						🕒&#12288最后修改时间2021年9月21日
+					</div>
+				</div>
+			 </div>
+			 
+			 
+			 
+		    <!--教师节——祝所有的老师节日快乐-->
+			<div class="middletext" id="teach">
+				<div class="middlehead">
+					<div class="middlename"  style="width: 100%;" >
+						教师节——祝所有的老师节日快乐
+					</div>
+					<div class="middleintro" style="width: 100%;margin-top: 2%;">
+					    既不回头，何必不忘。既然无缘，何须誓言。今日种种，似水无痕。明夕何夕，君已陌路
+					</div>
+				</div>
+				<div style="margin-top: 2.5%;" class="classification">
+				      &#12288&#12288🏠&#12288首页/正文/教师节——祝所有的老师节日快乐
+				</div>
+				<div class="yearstotal">
+					<div class="yearstext">
+						自小被教育，教师是辛勤的园丁，上了大学发现，所有的老师
+						都是伟大的，尽管老师记不住你的名字，但是一定记得住你是他的学生，不管你是否认真，
+						他都愿意孜孜不倦的为您讲解每一个知识，老师，您辛苦啦！<br/><br>
+						黄宗羲《与陈乾初论学书》中记载：汉、晋时期，每年八月二十七日孔子诞辰日这天，皇帝都要率领文武官员去祭拜孔庙，
+						还要邀请“国子学”“太学”的经师入宫“布席函丈(教师)为饮食之客，
+						席间词赋其娱”。看到皇帝在这天祭孔、请老师们吃饭，各地官府也纷纷效仿，这天除了祭奠孔子，也要“置休经师，授束修(干肉)”。<br/>
+						从这个意义上讲，当时虽没有确立孔子诞辰日为教师节，但教师已开始享受节日休假、会餐、发福利待遇了。
+						在一定程度上说，古代也是有教师节的。古代的教师节就是每年农历的八月二十七日，这天是圣人孔子的出生日。
+						孔子作为儒家的开山祖师，在我国古代有着举足轻重的地位，其有弟子学生3000人，贤人弟子72人。<br/><br/>
+						如今的9月10日教师节是1985年第六届全国人大常委会第九次会议决定的。
+						会议通过了国务院关于建立教师节的议案，决定将每年的9月10日定为教师节。1985年9月10日，是中国第一个教师节。<br/><br>
+						<img src="image/教师节.png" style="width: 95%;">
+					</div>
+					<div class="signature" style="width: 90%;height: 80px; border-top: 1px solid darkgray;margin-left: 5%;margin-top: 5%;color: darkgray;">
+						🕒&#12288最后修改时间2021年9月10日
+					</div>
+				</div>
+			 </div>
+			 
+			 
+			 
+			 
+			 
+		   <div class="middletext" id="secondmiddle">
+			   <div class="middlehead">
+					<div class="middlename">
+						留言板
+					</div>
+					<div class="middleintro">
+						所爱隔山海，山海皆可平
+					</div>
+			   </div>
+			   <div style="margin-top: 2.5%;" class="classification">
+			         &#12288&#12288🏠&#12288留言板/正文
+			   </div>
+				<img src="image/ironman.jpg" style="width: 95%;margin-top: 2%;margin-left: 2.5%;border-radius: 5px;">
+				<div class="middlebody">
+						<div style="text-align: center;font-family: 楷体;font-size: 20px;">
+							温柔可抵漫长岁月，从某种意义上来看，世间一切，都是遇见。就像，
+							冷遇见暖，就有了雨；春遇见冬，有了岁月；天遇见地，有了永恒；人遇见人，有了生命。
+							未来会怎样，里尔克有一首诗，他里面写道，你必须活在每一件事情里，你现在所经历的难题，
+							未来会找到答案，其实，当一个人真的要离开这个世界的时候，是什么也带不走的，唯一能带走的
+							就是心底里存下来的那些记忆。
+						</div>
+						<div style="text-align: center;font-size: 20px;margin-top: 8%;">
+							🔻🔻点击下方图片留言🐳🔻🔻
+							<div style="width: 90%;margin-left: 5%;margin-top: 5%; border: 1px solid #55AAFF;">
+							  <a href="comment.html" target="_blank">
+								   <img src="image/留言板.png" style="width: 100%;">
+							  </a>
+							</div>
+							<div style="text-align: left; font-size: 15px; border-bottom:2px solid darkgray;width: 98%; margin-top: 7%;margin-left: 0%;margin-bottom: 30px; color: darkgray;">
+								最后更新日期：2021年12月2日
+							</div>
+						</div>
+				</div>
+		   </div>
+		   <!--<div class="middletext" id="thirdmiddle">
+				<div class="middlehead">
+						Love
+				</div>
+				<div class="middlebody">
+						Lovetext
+				</div>
+		   </div>-->
+		   <div class="middletext" id="fourthmiddle">
+                <video id="video" src="image/复联4.mp4"  style="width: 98%;margin-top: 1%;margin-left: 1%;" controls="controls">
+				</video>
+				<div class="middlebody" style="overflow-x:visible;">
+				   <div class="talktotal" style="border-left: 2px solid darkgray;margin-left: 3.5%;margin-top: 8%;">
+					<div class="talk" style="margin-left: -0.5%; margin-top: -8%;">
+						<img src="image/talk.jpeg" style="width: 7%;height: 55px; border-radius: 5px;margin-left: -3.3%; margin-top:7.5%;">
+						<div class="bubble-box">
+						    <div class="bubble-name">
+								Whale&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288
+								2020年11月30日
+							</div>
+							<div class="bubble-text">
+							<br/>满课的周二，烟台也开始进入了寒风和冬雪的时节，上午全是飘的冰碴子，太冷了，
+							十四周了，基本还有两周就结课了，现在开始准备各部分应该也不算太晚吧，接下来的日子不能再荒废了。
+							收尾了博客的内容部分，将近2/3的整体也就完成了，攻克数据库这一大难关之后基本就可以宣告完工了。<br/><br/>
+							</div>
+						</div>
+					</div>
+					
+					<div class="talk"  style="margin-top: 8%;margin-left: -0.5%;">
+						<img src="image/talk.jpeg" style="width: 7%;height: 55px; border-radius: 5px;margin-left: -3.3%; margin-top: 27%;">
+						<div class="bubble-box">
+						    <div class="bubble-name">
+								Whale&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288
+								2020年11月19日
+							</div>
+							<div class="bubble-text">
+								<br/>今天终于把整体的框架搭好了，整体来看，和那位老哥的基本差不多，不过自己还是很满意的，继续完善！
+								<img src="image/talk.png" style="width: 100%;"><br/><br/>
+							</div>
+						</div>
+					</div>
+					
+					<div class="talk"  style="margin-top: 8%;margin-left: -0.5%;">
+						<img src="image/talk.jpeg" style="width: 7%;height: 55px; border-radius: 5px;margin-left: -3.3%; margin-top:7%;">
+						<div class="bubble-box">
+						    <div class="bubble-name">
+								Whale&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288
+								2020年11月8日
+							</div>
+							<div class="bubble-text">
+								<br/>不知道为什么总喜欢自己坐在湖边吹风<br/>
+								一切都显得那么安静，那么惬意，可能这就是自己的放松方式吧<br/>
+							    好久没给家里打过电话了<br/>
+								打一个吧<br/><br/>
+							</div>
+						</div>
+					</div>
+					
+					<div class="talk"  style="margin-top: 8%;margin-left: -0.5%;">
+						<img src="image/talk.jpeg" style="width: 7%;height: 55px; border-radius: 5px;margin-left: -3.3%; margin-top:27%;">
+						<div class="bubble-box">
+						    <div class="bubble-name">
+								Whale&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288
+								2020年11月2日
+							</div>
+							<div class="bubble-text">
+								<br/>主页画完啦，还可以嘛😀😀😀<br/>
+								比我想象的好看<br/>
+								<img src="image/talk1.png" style="width: 100%;"><br/><br/>
+							</div>
+						</div>
+					</div>
+					
+					<div class="talk"  style="margin-top: 8%;margin-left: -0.5%;">
+						<img src="image/talk.jpeg" style="width: 7%;height: 55px; border-radius: 5px;margin-left: -3.3%; margin-top:7%;">
+						<div class="bubble-box">
+						    <div class="bubble-name">
+								Whale&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288
+								2020年10月25日
+							</div>
+							<div class="bubble-text">
+								<br/>正式打响博客搭建第一枪，虽然之前也在做，不过也都是稀稀拉拉的，现在开始要主攻了，
+								做累了在写写uml的大作业，完美<br/>
+								自己虽然之前学会一点点，但真的是一点点，希望这次可以完美做下来！！！😾😾😾<br/><br/>
+							</div>
+						</div>
+					</div>
+					<div style="border-bottom:2px solid darkgray;width: 98%; margin-top: 7%;margin-left: 0%;margin-bottom: 30px; color: darkgray;">
+						最后更新日期：2021年11月30日
+					</div>
+					<div style="width: 5%; color: darkgray;font-size: 30px;margin-left: -3%;margin-bottom: -20px;">
+						📧
+					</div>
+				</div>
+				
+				</div>
+		   </div>
+		   <div class="middletext" id="fifthmiddle">
+				<div class="middlehead">
+					<div class="middlename">
+						🍭🍭🍭
+					</div>
+					<div class="middleintro">
+						所爱隔山海，山海皆可平
+					</div>
+				</div>
+				<div class="middlebody">
+					<div  class="classification">
+						  &#12288&#12288🏠&#12288投喂/正文
+					</div>
+					<img src="image/404.png" style="width: 100%;margin-top: 2%;">
+					<div>
+						<p style="font-size: 30px;font-weight: bolder;">赞赏说明 </p>
+						那个emmm，如果你有多余的软妹币的话，可以打赏一下鸭，您的打赏窝会用来买书或者其他好玩的！ありがとう！ Thanks！
+						<img src="image/求粮.webp">
+						<p style="font-size: 30px;font-weight: bolder;">赞赏方式</p>
+						<div style="display: flex;">
+							<img src="image/支付宝.jpg" style="width: 20%; margin-left: 30%;">
+							<img src="image/微信.jpg" style="width: 20%;">
+						</div>
+					</div>
+					<div style="border-bottom:2px solid darkgray;width: 98%; margin-top: 10%;margin-left: 0%;margin-bottom: 40px; color: darkgray;">
+						最后更新日期：2021年12月3日
+					</div>
+				</div>
+		   </div>
+		   <!--导航中部框--> 
+		   
+		   
+		   <!--组合中部框-->
+		     <div class="middletext" id="onemiddle">
+				<div class="middlehead">
+					<div class="middlename">
+						whale
+					</div>
+					<div class="middleintro" style="width: 100%;">
+						白茶清欢无别事，我在等风也等你，苦酒折柳今相离，无风无月也无你
+					</div>
+				</div>
+				<div class="middlebody" id="learn">
+					<div class="classification">
+						🏠&#12288学习笔记/正文
+					</div>
+				
+				<div class="middlefirst" style="margin-top: 4%;" id="beautifymirror">
+					<img src="image/素材22.png">
+					<div class="middlefirsttext">
+						<div class="firsthead" title="美化主题">
+							 美化主题
+						</div>
+						<div title="摘要：Web前端对于网站的搭建美化也是比较考验创意的，对于
+每一个前端学习和使用的人都是不小的考验，自己通过摸索出了一些方法，
+根据自己的创意进行搭建，使用的都是比较基本的方法，简朴为主" class="abstract">
+							摘要：Web前端对于网站的搭建美化也是比较考验创意的，对于
+							每一个前端学习和使用的人都是不小的考验，自己通过摸索出了一些方法，
+							根据自己的创意进行搭建，使用的都是比较基本的方法，简朴为主
+						</div>
+						<div class="bottomname">
+							🧑Whale&#12288&#12288&#12288🕛2021年11月15日
+						</div>
+					</div>
+				</div>
+				
+				<div class="middlefirst" style="margin-top: 4%;" id="cutmirror">
+					<img style="width:80%;height: 200px;" src="image/素材33.png">
+					<div class="middlefirsttext">
+						<div class="firsthead" title="假·窗口切换：div隐藏和显示">
+							 假·窗口切换：div隐藏和显示
+						</div>
+						<div title="摘要：搭建博客时，不同板块之间来回切换页面无疑是一大忌，
+所以需要在整个页面中开拓出一块特定的区域可以在其中将所显示的不同div
+进行切换，进而实现在整个的网页窗口中造就一个小窗口之间来回切换的效果。" class="abstract">
+							摘要：Web前端对于网站的搭建美化也是比较考验创意的，对于
+							每一个前端学习和使用的人都是不小的考验，自己通过摸索出了一些方法，
+							根据自己的创意进行搭建，使用的都是比较基本的方法，简朴为主
+						</div>
+						<div class="bottomname">
+							🧑Whale&#12288&#12288&#12288🕛2021年11月9日
+						</div>
+					</div>
+				</div>
+				
+			
+			<div class="middlefirst" style="margin-top: 4%;" id="settingmirror">
+					<img src="image/素材55.png">
+					<div class="middlefirsttext">
+						<div class="firsthead" title="切换背景">
+							 切换背景
+						</div>
+						<div title="摘要：一个好的博客除了其中的技术知识真实丰富，还要让其灵动起来，
+在div中通过css或者js切换背景也是动起来的好方法，css通过改变背景图片的根目录转变，
+js通过在其中改变不同id名称的图片进行调用，切换都十分的流畅。" class="abstract">
+							摘要：Web前端对于网站的搭建美化也是比较考验创意的，对于
+							每一个前端学习和使用的人都是不小的考验，自己通过摸索出了一些方法，
+							根据自己的创意进行搭建，使用的都是比较基本的方法，简朴为主
+						</div>
+						<div class="bottomname">
+							🧑Whale&#12288&#12288&#12288🕛2021年10月23日
+						</div>
+					</div>
+				</div>
+				
+				<div class="middlefirst" style="margin-top: 2%;" id="musicplayermirror">
+						<img src="image/素材66.png">
+						<div class="middlefirsttext">
+							<div class="firsthead" title="最简单音乐播放器">
+								最简单音乐播放器
+							</div>
+							<div title="摘要:博客中的背景音乐也是网页中的加分点，在设置音乐播放时，
+最简单的方法就是使用audio，较为复杂的就是自行设置播放开关，将其直接引入音乐路径，
+通过js将音乐的图片进行旋转。" class="abstract">
+								摘要:博客中的背景音乐也是网页中的加分点，在设置音乐播放时，
+								最简单的方法就是使用audio，较为复杂的就是自行设置播放开关，将其直接引入音乐路径，
+								通过js将音乐的图片进行旋转。
+							</div>
+							<div class="bottomname">
+								🧑Whale&#12288&#12288&#12288🕛2021年10月17日
+							</div>
+						</div>
+					</div>
+					
+					<div class="middlefirst" style="margin-top: 4%;" id="springmirror">
+						<img style="width:80%;height: 200px;" src="image/素材77.png">
+						<div class="middlefirsttext" >
+							<div class="firsthead" title="强化学习-SpringBoot框架" >
+								 强化学习-SpringBoot框架
+							</div>
+							<div title="摘要：前端主要是负责界面的美观一些操作，对于处理数据的能力，
+还是后端的效率最高，而且使用方法极其简便，可以令整个的页面更加的动态化，前后端连接的方法有很多，
+这次所使用的为SpringBoot框架，使用较为广泛" class="abstract">
+							   摘要：前端主要是负责界面的美观一些操作，对于处理数据的能力，
+							   还是后端的效率最高，而且使用方法极其简便，可以令整个的页面更加的动态化，前后端连接的方法有很多，
+							   这次所使用的为SpringBoot框架，使用较为广泛
+							</div>
+							<div class="bottomname">
+								🧑Whale&#12288&#12288&#12288🕛2021年10月14日
+							</div>
+						</div>
+					</div>
+					
+					<div class="middlefirst" style="margin-top: 4%;" id="datamirror">
+						<img style="width:75%;" src="image/素材8.png">
+						<div class="middlefirsttext">
+							<div class="firsthead" title="深度学习——数据的储存方法">
+								 深度学习——数据的储存方法
+							</div>
+							<div title="摘要：对于不同的H5界面中对于不同类型的数据进行合理的储存
+和使用也是一大难关，所包括的方法主要包括本地储存、会话级本地储存、永久本地储存以及
+在前端中用的不太多的数据库。" class="abstract">
+								摘要：对于不同的H5界面中对于不同类型的数据进行合理的储存
+								和使用也是一大难关，所包括的方法主要包括本地储存、会话级本地储存、永久本地储存以及
+								在前端中用的不太多的数据库。
+							</div>
+							<div class="bottomname">
+								🧑Whale&#12288&#12288&#12288🕛2021年10月10日
+							</div>
+						</div>
+					</div>
+									
+					<div class="middlefirst" style="margin-top: 4%;" id="enrollmirror">
+						<img style="width:83%;" src="image/素材9.png">
+						<div class="middlefirsttext">
+							<div class="firsthead" title="注册——登录的连接">
+								 注册——登录的连接
+							</div>
+							<div title="摘要：在几乎每一个web网站中，注册和登录界面的搭建都是老生常谈的话题，
+但是登录和注册的数据进行处理的过程也同样很复杂，所有用户是不能重复的，
+所以我们需要一个储存方式对注册和登录进行连接。" class="abstract">
+								摘要：在几乎每一个web网站中，注册和登录界面的搭建都是老生常谈的话题，
+								但是登录和注册的数据进行处理的过程也同样很复杂，所有用户是不能重复的，
+								所以我们需要一个储存方式对注册和登录进行连接。
+							</div>
+							<div class="bottomname">
+								🧑Whale&#12288&#12288&#12288🕛2021年10月7日
+							</div>
+						</div>
+					</div>
+			   </div>
+		     </div>
+			 
+			 
+			 
+			 <div class="middletext" id="twomiddle">
+				<div class="middlehead">
+					<div class="middlename">
+						whale
+					</div>
+					<div class="middleintro" style="width: 100%;">
+						朝朝暮，云定何如，花日穿窗梅小小，风洒雨柳疏疏，人唱晚晴初
+					</div>
+				</div>
+			<div class="middlebody">
+				<div class="classification">
+					🏠&#12288随笔/正文
+				</div>
+				
+				<div class="middlefirst" style="margin-top: 2%;"  id="afteryearsmirror">
+					<img src="image/素材11.png">
+					<div class="middlefirsttext">
+						<div class="firsthead" title="几年后">
+							几年来
+						</div>
+						<div title="摘要：“山海自有归期 风雨自有相逢 意难平终将和解 万事终将如意”
+自己也马上面临考研了，有过迷茫也有过坚定，不知道自己几年后会是什么样子，
+回想起自己的今日，是感谢还是后悔。" class="abstract">
+							摘要：“山海自有归期 风雨自有相逢 意难平终将和解 万事终将如意”
+							自己也马上面临考研了，有过迷茫也有过坚定，不知道自己几年后会是什么样子，
+							回想起自己的今日，是感谢还是后悔。
+						</div>
+						<div class="bottomname">
+							🧑Whale&#12288&#12288&#12288🕛2021年11月26日
+						</div>
+					</div>
+				</div>
+				
+				
+				<div class="middlefirst" style="margin-top: 4%;" id="happymirror">
+					<img style="width:57%;" src="image/素材10.png">
+					<div class="middlefirsttext">
+						<div class="firsthead" title="Happy Birthday">
+							 Happy Birthday
+						</div>
+						<div title="摘要：Today is my lover's birthday.陪宝贝过的第一个生日，
+相遇535天，相爱362天，以后的每一天都愿意给她，祝我家宝贝永远开心快乐。" class="abstract">
+							摘要：Today is my lover's birthday.陪宝贝过的第一个生日，
+							相遇535天，相爱362天，以后的每一天都愿意给她，祝我家宝贝永远开心快乐。
+						</div>
+						<div class="bottomname">
+							🧑Whale&#12288&#12288&#12288🕛2021年10月2日u
+						</div>
+					</div>
+				</div>
+			 
+
+			<div class="middlefirst" style="margin-top: 4%;" id="lonelymirror">
+				<img src="image/素材44.png">
+				<div class="middlefirsttext">
+					<div class="firsthead" title="享受孤独">
+						 享受孤独
+					</div>
+					<div title="摘要：夜晚的风渐渐凉了起来，从实验室晚归的学子，荡步在湖边，
+平静且美好，没有了街道上的喧闹，只有风抚上我的脸颊，
+心里装着一个人，哪怕之身一人也是享受，我想你了" class="abstract">
+						摘要：夜晚的风渐渐凉了起来，从实验室晚归的学子，荡步在湖边，
+						平静且美好，没有了街道上的喧闹，只有风抚上我的脸颊，
+						心里装着一个人，哪怕之身一人也是享受，我想你了
+					</div>
+					<div class="bottomname">
+						🧑Whale&#12288&#12288&#12288🕛2021年11月3日
+					</div>
+				</div>
+			</div>
+		  </div>
+		</div>
+			 
+			 <div class="middletext" id="threemiddle">
+				<div class="middlehead">
+					<div class="middlename">
+						whale
+					</div>
+					<div class="middleintro" style="width: 100%;">
+						奈何有缺，相思夜，白头之约，此生决。十里长街，风怯却。漫天飘雪，与谁诀别
+					</div>
+				</div>
+			<div class="middlebody">
+				<div class="classification">
+					🏠&#12288人文社科/正文
+				</div>
+			
+				<div class="middlefirst" style="margin-top: 2%;" id="mvcmirror">
+					<img src="image/稻海.jpg">
+					<div class="middlefirsttext">
+						<div class="firsthead" title="中秋节——对于MVC的思考">
+							中秋节——对于MVC的思考
+						</div>
+						<div title="“又是一年在学校度过的中秋，希望每个人都万事顺心”
+MVC是整个软件体系结构中最重要也是最基础的部分，M是指业务模型，V是指用户界面，C则是控制器，
+使用MVC的目的是将M和V的实现代码分离，从而使同一个程序可以使用不同的表现形式" class="abstract">
+							“又是一年在学校度过的中秋，希望每个人都万事顺心”
+							MVC是整个软件体系结构中最重要也是最基础的部分，M是指业务模型，V是指用户界面，C则是控制器，
+							使用MVC的目的是将M和V的实现代码分离，从而使同一个程序可以使用不同的表现形式
+						</div>
+						<div class="bottomname">
+							🧑Whale&#12288&#12288&#12288🕛2021年9月21日
+						</div>
+					</div>
+				</div>
+				
+				
+				<div class="middlefirst" style="margin-top: 4%;" id="teachermirror">
+						<img src="image/划船.png">
+						<div class="middlefirsttext">
+							<div class="firsthead" title="教师节——祝所有的老师节日快乐">
+								 教师节——祝所有的老师节日快乐
+							</div>
+							<div title="摘要：自小被教育，教师是辛勤的园丁，上了大学发现，所有的老师
+		都是伟大的，尽管老师记不住你的名字，但是一定记得住你是他的学生，不管你是否认真，
+		他都愿意孜孜不倦的为您讲解每一个知识，老师，您辛苦啦！" class="abstract">
+								摘要：自小被教育，教师是辛勤的园丁，上了大学发现，所有的老师
+								都是伟大的，尽管老师记不住你的名字，但是一定记得住你是他的学生，不管你是否认真，
+								他都愿意孜孜不倦的为您讲解每一个知识，老师，您辛苦啦！
+							</div>
+							<div class="bottomname">
+								🧑Whale&#12288&#12288&#12288🕛2021年9月10日
+							</div>
+						</div>
+			    </div>
+			  </div>
+			 </div>
+			 
+			 
+			 
+			 <div class="middletext" id="fourmiddle">
+				<div class="middlehead">
+					<div class="middlename">
+						whale
+					</div>
+					<div class="middleintro" style="width: 100%;">
+						朝朝暮，云定何如，花日穿窗梅小小，风洒雨柳疏疏，人唱晚晴初
+					</div>
+				</div>
+				<div class="middlebody">
+					<div class="classification">
+						🏠&#12288 2021年11月/正文
+					</div>
+					<div class="middlefirst" style="margin-top: 2%;"  id="afteryears1">
+						<img src="image/素材11.png">
+						<div class="middlefirsttext">
+							<div class="firsthead" title="几年后">
+								几年来
+							</div>
+							<div title="摘要：“山海自有归期 风雨自有相逢 意难平终将和解 万事终将如意”
+	自己也马上面临考研了，有过迷茫也有过坚定，不知道自己几年后会是什么样子，
+	回想起自己的今日，是感谢还是后悔。" class="abstract">
+								摘要：“山海自有归期 风雨自有相逢 意难平终将和解 万事终将如意”
+								自己也马上面临考研了，有过迷茫也有过坚定，不知道自己几年后会是什么样子，
+								回想起自己的今日，是感谢还是后悔。
+							</div>
+							<div class="bottomname">
+								🧑Whale&#12288&#12288&#12288🕛2021年11月26日
+							</div>
+						</div>
+					</div>
+					
+					<div class="middlefirst" style="margin-top: 4%;" id="beautify1">
+						<img src="image/素材22.png">
+						<div class="middlefirsttext">
+							<div class="firsthead" title="美化主题">
+								 美化主题
+							</div>
+							<div title="摘要：Web前端对于网站的搭建美化也是比较考验创意的，对于
+	每一个前端学习和使用的人都是不小的考验，自己通过摸索出了一些方法，
+	根据自己的创意进行搭建，使用的都是比较基本的方法，简朴为主" class="abstract">
+								摘要：Web前端对于网站的搭建美化也是比较考验创意的，对于
+								每一个前端学习和使用的人都是不小的考验，自己通过摸索出了一些方法，
+								根据自己的创意进行搭建，使用的都是比较基本的方法，简朴为主
+							</div>
+							<div class="bottomname">
+								🧑Whale&#12288&#12288&#12288🕛2021年11月15日
+							</div>
+						</div>
+					</div>
+					
+					<div class="middlefirst" style="margin-top: 4%;" id="cut1">
+						<img style="width:80%;height: 200px;" src="image/素材33.png">
+						<div class="middlefirsttext">
+							<div class="firsthead" title="假·窗口切换：div隐藏和显示">
+								 假·窗口切换：div隐藏和显示
+							</div>
+							<div title="摘要：搭建博客时，不同板块之间来回切换页面无疑是一大忌，
+	所以需要在整个页面中开拓出一块特定的区域可以在其中将所显示的不同div
+	进行切换，进而实现在整个的网页窗口中造就一个小窗口之间来回切换的效果。" class="abstract">
+								摘要：Web前端对于网站的搭建美化也是比较考验创意的，对于
+								每一个前端学习和使用的人都是不小的考验，自己通过摸索出了一些方法，
+								根据自己的创意进行搭建，使用的都是比较基本的方法，简朴为主
+							</div>
+							<div class="bottomname">
+								🧑Whale&#12288&#12288&#12288🕛2021年11月9日
+							</div>
+						</div>
+					</div>
+									
+					<div class="middlefirst" style="margin-top: 4%;" id="lonely1">
+						<img src="image/素材44.png">
+						<div class="middlefirsttext">
+							<div class="firsthead" title="享受孤独">
+								 享受孤独
+							</div>
+							<div title="摘要：夜晚的风渐渐凉了起来，从实验室晚归的学子，荡步在湖边，
+	平静且美好，没有了街道上的喧闹，只有风抚上我的脸颊，
+	心里装着一个人，哪怕之身一人也是享受，我想你了" class="abstract">
+								摘要：夜晚的风渐渐凉了起来，从实验室晚归的学子，荡步在湖边，
+								平静且美好，没有了街道上的喧闹，只有风抚上我的脸颊，
+								心里装着一个人，哪怕之身一人也是享受，我想你了
+							</div>
+							<div class="bottomname">
+								🧑Whale&#12288&#12288&#12288🕛2021年11月3日
+							</div>
+						</div>
+					</div>
+			   </div>
+			 </div>
+			 
+			 
+		     <div class="middletext" id="fivemiddle">
+				<div class="middlehead">
+					<div class="middlename">
+						whale
+					</div>
+					<div class="middleintro" style="width: 100%;">
+						朝朝暮，云定何如，花日穿窗梅小小，风洒雨柳疏疏，人唱晚晴初
+					</div>
+				</div>
+				<div class="middlebody">
+					<div class="classification">
+						🏠&#12288 2021年10月/正文
+					</div>
+				 <div class="middlefirst" style="margin-top: 4%;" id="setting1">
+					<img src="image/素材55.png">
+					<div class="middlefirsttext">
+						<div class="firsthead" title="切换背景">
+							 切换背景
+						</div>
+						<div title="摘要：一个好的博客除了其中的技术知识真实丰富，还要让其灵动起来，
+在div中通过css或者js切换背景也是动起来的好方法，css通过改变背景图片的根目录转变，
+js通过在其中改变不同id名称的图片进行调用，切换都十分的流畅。" class="abstract">
+							摘要：Web前端对于网站的搭建美化也是比较考验创意的，对于
+							每一个前端学习和使用的人都是不小的考验，自己通过摸索出了一些方法，
+							根据自己的创意进行搭建，使用的都是比较基本的方法，简朴为主
+						</div>
+						<div class="bottomname">
+							🧑Whale&#12288&#12288&#12288🕛2021年10月23日
+						</div>
+					</div>
+				</div>
+				
+				<div class="middlefirst" style="margin-top: 2%;" id="musicplayer1">
+						<img src="image/素材66.png">
+						<div class="middlefirsttext">
+							<div class="firsthead" title="最简单音乐播放器">
+								最简单音乐播放器
+							</div>
+							<div title="摘要:博客中的背景音乐也是网页中的加分点，在设置音乐播放时，
+最简单的方法就是使用audio，较为复杂的就是自行设置播放开关，将其直接引入音乐路径，
+通过js将音乐的图片进行旋转。" class="abstract">
+								摘要:博客中的背景音乐也是网页中的加分点，在设置音乐播放时，
+								最简单的方法就是使用audio，较为复杂的就是自行设置播放开关，将其直接引入音乐路径，
+								通过js将音乐的图片进行旋转。
+							</div>
+							<div class="bottomname">
+								🧑Whale&#12288&#12288&#12288🕛2021年10月17日
+							</div>
+						</div>
+					</div>
+					
+					<div class="middlefirst" style="margin-top: 4%;" id="spring1">
+						<img style="width:80%;height: 200px;" src="image/素材77.png">
+						<div class="middlefirsttext" >
+							<div class="firsthead" title="强化学习-SpringBoot框架" >
+								 强化学习-SpringBoot框架
+							</div>
+							<div title="摘要：前端主要是负责界面的美观一些操作，对于处理数据的能力，
+还是后端的效率最高，而且使用方法极其简便，可以令整个的页面更加的动态化，前后端连接的方法有很多，
+这次所使用的为SpringBoot框架，使用较为广泛" class="abstract">
+							   摘要：前端主要是负责界面的美观一些操作，对于处理数据的能力，
+							   还是后端的效率最高，而且使用方法极其简便，可以令整个的页面更加的动态化，前后端连接的方法有很多，
+							   这次所使用的为SpringBoot框架，使用较为广泛
+							</div>
+							<div class="bottomname">
+								🧑Whale&#12288&#12288&#12288🕛2021年10月14日
+							</div>
+						</div>
+					</div>
+					
+					<div class="middlefirst" style="margin-top: 4%;" id="data1">
+						<img style="width:75%;" src="image/素材8.png">
+						<div class="middlefirsttext">
+							<div class="firsthead" title="深度学习——数据的储存方法">
+								 深度学习——数据的储存方法
+							</div>
+							<div title="摘要：对于不同的H5界面中对于不同类型的数据进行合理的储存
+和使用也是一大难关，所包括的方法主要包括本地储存、会话级本地储存、永久本地储存以及
+在前端中用的不太多的数据库。" class="abstract">
+								摘要：对于不同的H5界面中对于不同类型的数据进行合理的储存
+								和使用也是一大难关，所包括的方法主要包括本地储存、会话级本地储存、永久本地储存以及
+								在前端中用的不太多的数据库。
+							</div>
+							<div class="bottomname">
+								🧑Whale&#12288&#12288&#12288🕛2021年10月10日
+							</div>
+						</div>
+					</div>
+									
+					<div class="middlefirst" style="margin-top: 4%;" id="enroll1">
+						<img style="width:83%;" src="image/素材9.png">
+						<div class="middlefirsttext">
+							<div class="firsthead" title="注册——登录的连接">
+								 注册——登录的连接
+							</div>
+							<div title="摘要：在几乎每一个web网站中，注册和登录界面的搭建都是老生常谈的话题，
+但是登录和注册的数据进行处理的过程也同样很复杂，所有用户是不能重复的，
+所以我们需要一个储存方式对注册和登录进行连接。" class="abstract">
+								摘要：在几乎每一个web网站中，注册和登录界面的搭建都是老生常谈的话题，
+								但是登录和注册的数据进行处理的过程也同样很复杂，所有用户是不能重复的，
+								所以我们需要一个储存方式对注册和登录进行连接。
+							</div>
+							<div class="bottomname">
+								🧑Whale&#12288&#12288&#12288🕛2021年10月7日
+							</div>
+						</div>
+					</div>
+									
+					<div class="middlefirst" style="margin-top: 4%;" id="happy1">
+						<img style="width:57%;" src="image/素材10.png">
+						<div class="middlefirsttext">
+							<div class="firsthead" title="Happy Birthday">
+								 Happy Birthday
+							</div>
+							<div title="摘要：Today is my lover's birthday.陪宝贝过的第一个生日，
+相遇535天，相爱362天，以后的每一天都愿意给她，祝我家宝贝永远开心快乐。" class="abstract">
+								摘要：Today is my lover's birthday.陪宝贝过的第一个生日，
+								相遇535天，相爱362天，以后的每一天都愿意给她，祝我家宝贝永远开心快乐。
+							</div>
+							<div class="bottomname">
+								🧑Whale&#12288&#12288&#12288🕛2021年10月2日
+							</div>
+						</div>
+					</div>
+		     </div>
+			</div>
+			 
+			 
+			 
+			 <div class="middletext" id="sixmiddle">
+				<div class="middlehead">
+					<div class="middlename">
+						whale
+					</div>
+					<div class="middleintro" style="width: 100%;">
+						朝朝暮，云定何如，花日穿窗梅小小，风洒雨柳疏疏，人唱晚晴初
+					</div>
+				</div>
+				<div class="middlebody">
+					<div class="classification">
+						🏠&#12288 2021年9月/正文
+					</div>
+					<div class="middlefirst" style="margin-top: 2%;" id="mvc1">
+							<img src="image/稻海.jpg">
+							<div class="middlefirsttext">
+								<div class="firsthead" title="中秋节——对于MVC的思考">
+									中秋节——对于MVC的思考
+								</div>
+								<div title="“又是一年在学校度过的中秋，希望每个人都万事顺心”
+MVC是整个软件体系结构中最重要也是最基础的部分，M是指业务模型，V是指用户界面，C则是控制器，
+使用MVC的目的是将M和V的实现代码分离，从而使同一个程序可以使用不同的表现形式" class="abstract">
+									“又是一年在学校度过的中秋，希望每个人都万事顺心”
+									MVC是整个软件体系结构中最重要也是最基础的部分，M是指业务模型，V是指用户界面，C则是控制器，
+									使用MVC的目的是将M和V的实现代码分离，从而使同一个程序可以使用不同的表现形式
+								</div>
+								<div class="bottomname">
+									🧑Whale&#12288&#12288&#12288🕛2021年9月21日
+								</div>
+							</div>
+						</div>
+						
+						<div class="middlefirst" style="margin-top: 4%;" id="teacher1">
+							<img src="image/划船.png">
+							<div class="middlefirsttext">
+								<div class="firsthead" title="教师节——祝所有的老师节日快乐">
+									 教师节——祝所有的老师节日快乐
+								</div>
+								<div title="摘要：自小被教育，教师是辛勤的园丁，上了大学发现，所有的老师
+都是伟大的，尽管老师记不住你的名字，但是一定记得住你是他的学生，不管你是否认真，
+他都愿意孜孜不倦的为您讲解每一个知识，老师，您辛苦啦！" class="abstract">
+									摘要：自小被教育，教师是辛勤的园丁，上了大学发现，所有的老师
+									都是伟大的，尽管老师记不住你的名字，但是一定记得住你是他的学生，不管你是否认真，
+									他都愿意孜孜不倦的为您讲解每一个知识，老师，您辛苦啦！
+								</div>
+								<div class="bottomname">
+									🧑Whale&#12288&#12288&#12288🕛2021年9月10日
+								</div>
+							</div>
+						</div>
+				</div>
+			 </div>
+			 
+			 
+			 
+			 <div class="middletext" id="sevenmiddle">
+				<div class="middlehead">
+						博客主题
+				</div>
+				<div class="middlebody">
+					<div class="classification">
+						🏠&#12288博客主题/正文
+					</div>
+					<div class="middlefirst" style="margin-top: 4%;" id="beautify2">
+					<img src="image/素材22.png">
+					<div class="middlefirsttext">
+						<div class="firsthead" title="美化主题">
+							 美化主题
+						</div>
+						<div title="摘要：Web前端对于网站的搭建美化也是比较考验创意的，对于
+每一个前端学习和使用的人都是不小的考验，自己通过摸索出了一些方法，
+根据自己的创意进行搭建，使用的都是比较基本的方法，简朴为主" class="abstract">
+							摘要：Web前端对于网站的搭建美化也是比较考验创意的，对于
+							每一个前端学习和使用的人都是不小的考验，自己通过摸索出了一些方法，
+							根据自己的创意进行搭建，使用的都是比较基本的方法，简朴为主
+						</div>
+						<div class="bottomname">
+							🧑Whale&#12288&#12288&#12288🕛2021年11月15日
+						</div>
+					</div>
+				  </div>
+				</div>
+				
+				
+				
+				
+			 </div>
+			 <div class="middletext" id="eightmiddle">
+				<div class="middlehead">
+						深度学习
+				</div>
+				<div class="middlebody">
+					<div class="classification">
+						🏠&#12288深度学习/正文
+					</div>
+						<div class="middlefirst" style="margin-top: 4%;" id="data2">
+							<img style="width:75%;" src="image/素材8.png">
+							<div class="middlefirsttext">
+								<div class="firsthead" title="深度学习——数据的储存方法">
+									 深度学习——数据的储存方法
+								</div>
+								<div title="摘要：对于不同的H5界面中对于不同类型的数据进行合理的储存
+	和使用也是一大难关，所包括的方法主要包括本地储存、会话级本地储存、永久本地储存以及
+	在前端中用的不太多的数据库。" class="abstract">
+									摘要：对于不同的H5界面中对于不同类型的数据进行合理的储存
+									和使用也是一大难关，所包括的方法主要包括本地储存、会话级本地储存、永久本地储存以及
+									在前端中用的不太多的数据库。
+								</div>
+								<div class="bottomname">
+									🧑Whale&#12288&#12288&#12288🕛2021年10月10日
+								</div>
+							</div>
+						</div>
+				</div>
+			 </div>
+			 <div class="middletext" id="ninemiddle">
+				<div class="middlehead">
+						强化学习
+				</div>
+				<div class="middlebody">
+					<div class="classification">
+						🏠&#12288强化学习/正文
+					</div>
+					<div class="middlefirst" style="margin-top: 4%;" id="spring2">
+						<img style="width:80%;height: 200px;" src="image/素材77.png">
+						<div class="middlefirsttext" >
+							<div class="firsthead" title="强化学习-SpringBoot框架" >
+								 强化学习-SpringBoot框架
+							</div>
+							<div title="摘要：前端主要是负责界面的美观一些操作，对于处理数据的能力，
+还是后端的效率最高，而且使用方法极其简便，可以令整个的页面更加的动态化，前后端连接的方法有很多，
+这次所使用的为SpringBoot框架，使用较为广泛" class="abstract">
+							   摘要：前端主要是负责界面的美观一些操作，对于处理数据的能力，
+							   还是后端的效率最高，而且使用方法极其简便，可以令整个的页面更加的动态化，前后端连接的方法有很多，
+							   这次所使用的为SpringBoot框架，使用较为广泛
+							</div>
+							<div class="bottomname">
+								🧑Whale&#12288&#12288&#12288🕛2021年10月14日
+							</div>
+						</div>
+					</div>
+				</div>
+			 </div>
+			 <div class="middletext" id="tenmiddle">
+				<div class="middlehead">
+						时光
+				</div>
+				<div class="middlebody">
+					<div class="classification">
+						🏠&#12288时光/正文
+					</div>
+					<div class="middlefirst" style="margin-top: 2%;"  id="afteryears2">
+					<img src="image/素材11.png">
+					<div class="middlefirsttext">
+						<div class="firsthead" title="几年后">
+							几年来
+						</div>
+						<div title="摘要：“山海自有归期 风雨自有相逢 意难平终将和解 万事终将如意”
+自己也马上面临考研了，有过迷茫也有过坚定，不知道自己几年后会是什么样子，
+回想起自己的今日，是感谢还是后悔。" class="abstract">
+							摘要：“山海自有归期 风雨自有相逢 意难平终将和解 万事终将如意”
+							自己也马上面临考研了，有过迷茫也有过坚定，不知道自己几年后会是什么样子，
+							回想起自己的今日，是感谢还是后悔。
+						</div>
+						<div class="bottomname">
+							🧑Whale&#12288&#12288&#12288🕛2021年11月26日
+						</div>
+					</div>
+				</div>
+				
+				
+				<div class="middlefirst" style="margin-top: 4%;" id="happy2">
+					<img style="width:57%;" src="image/素材10.png">
+					<div class="middlefirsttext">
+						<div class="firsthead" title="Happy Birthday">
+							 Happy Birthday
+						</div>
+						<div title="摘要：Today is my lover's birthday.陪宝贝过的第一个生日，
+相遇535天，相爱362天，以后的每一天都愿意给她，祝我家宝贝永远开心快乐。" class="abstract">
+							摘要：Today is my lover's birthday.陪宝贝过的第一个生日，
+							相遇535天，相爱362天，以后的每一天都愿意给她，祝我家宝贝永远开心快乐。
+						</div>
+						<div class="bottomname">
+							🧑Whale&#12288&#12288&#12288🕛2021年10月2日
+						</div>
+					</div>
+				 </div>
+				</div>
+			 </div>
+			 
+			 <div class="right">
+			 	  <div class="fire">
+					  🔥
+				  </div>
+				  <div class="hot">
+					  热门文章
+				  </div>
+				  <div class="rightpassage">
+					  <div class="fd1" id="f1">
+						  <img src="./image/right1.png">
+						  <div class="fdtext1" title=" 一起来为自己的博客添加素材吧">
+							  一起来为自己的博客添加素材吧
+						  </div>
+					  </div>
+					  
+				     <div class="fd1" id="f2">
+						  <img src="./image/right2.png">
+						  <div class="fdtext1" title="制作有一个假窗口，div在窗口内的隐藏和出现">
+							  制作有一个假窗口，div在窗口内的隐藏和出现
+						  </div>
+					  </div>
+					  
+					  <div class="fd1" id="f3">
+						  <img src="./image/right3.png">
+						  <div class="fdtext1" title="你还在为存储数据而头疼吗，一起来学习吧">
+							  你还在为存储数据而头疼吗，一起来学习吧
+						  </div>
+					  </div>
+					  
+					  <div class="fd1" id="f4">
+						  <img src="./image/right4.png">
+						  <div class="fdtext1" title="[初入小白]前后端的连接，Spring框架的学习">
+							 [初入小白]前后端的连接，Spring框架的学习
+						  </div>
+					  </div>
+					  
+					  <div class="fd1" id="f5">
+						  <img src="./image/right3.png">
+						  <div class="fdtext1" title="[丙辰中秋]举杯同饮，共商MVC框架">
+							  [丙辰中秋]举杯同饮，共商MVC框架
+						  </div>
+					  </div>
+				  </div>
+				  
+				 
+				  
+				  <div class="hot" style="margin-top: 20%;">
+					  博客信息
+				  </div>
+				  <div class="information">
+					  <div class="fin" style="margin-top: 15%;">
+						<div class="fin1">
+						  📄&#12288文章数目
+						</div>
+						<div class="fins" style="margin-left: 30%;border-radius: 7px;">
+							12
+						</div>
+					  </div>
+					  
+					  <div class="fin">
+						<div class="fin1">
+						   💬&#12288评论数目
+						</div>
+						<div class="fins" id="finmessage" style="margin-left: 28%;border-radius: 7px;">
+							
+						</div>
+					  </div>
+					  
+					  <div class="fin">
+						<div class="fin1">
+						   🕕&#12288运行天数
+						</div>
+						<div class="fins" style="margin-left: 19%;">
+							2个月
+						</div>
+					  </div>
+					  
+					  <div class="fin">
+						<div class="fin1">
+						   📊&#12288博客粉丝
+						</div>
+						<div class="fins" style="margin-left: 32%;border-radius: 5px;">
+							0
+						</div>
+					  </div>
+					  
+					<div class="fin" style="margin-bottom: 20px;">
+						<div class="fin1">
+						   🌀&#12288关注博主
+						</div>
+						<div class="fins" style="margin-left: 33%;border-radius: 5px;">
+							1
+						</div>
+					</div>
+					<div style="height: 16px;">
+						
+					</div>
+				  </div>
+				  
+				  <div class="hot" style="margin-top: 20%;">                        个人标签
+				  </div>
+				  <div style="width: 90%;margin-left: 5%;">
+					  <div style="display: flex;">
+						  <div style="color: white;  border-radius: 5px;background-color: rgba(211, 211, 211, 0.8);">
+							  大学
+						  </div>
+						  <div style="margin-left: 3%; color: white;  border-radius: 5px;background-color: rgba(211, 211, 211, 0.8);">
+							  考研党
+						  </div>
+						  <div style="margin-left: 3%;color: white;  border-radius: 5px;background-color: rgba(211, 211, 211, 0.8);">
+							 一夜暴富
+						  </div>
+						  <div style="margin-left: 3%;color: white;  border-radius: 5px;background-color: rgba(211, 211, 211, 0.8);">
+							  深入学习
+						  </div>
+					  </div>
+					  <div style="display: flex;margin-top: 3%;">
+						  <div style="color: white;  border-radius: 5px;background-color: rgba(211, 211, 211, 0.8);">
+							时光
+						  </div>
+						  <div style="margin-left: 3%; color: white;  border-radius: 5px;background-color: rgba(211, 211, 211, 0.8);">
+							美化
+						  </div>
+						  <div style="margin-left: 3%; color: white; border-radius: 5px;background-color: rgba(211, 211, 211, 0.8);">
+							web小白
+						  </div>
+						  <div style="margin-left: 3%; color: white;  border-radius: 5px;background-color: rgba(211, 211, 211, 0.8);">
+							 C++
+						  </div>
+					
+					  <div style="margin-left: 3%; color: white;  border-radius: 5px;background-color: rgba(211, 211, 211, 0.8);">
+					     Java
+					  </div>
+					  </div>
+				  </div>
+				  <div style="height: 300px;">
+					  
+				  </div>
+			 </div>
+		   
+	</div>	
+	</body>
+	<!--首页js-->
+	<script src="js/jquery-1.5.1.js" type="text/javascript"></script>
+	
+	<script type="text/javascript">
+	    window.name="upload";
+		var fyears=document.getElementById('fewyears');
+		var ayears=document.getElementById('afteryears');
+		var beaufity=document.getElementById("beautify");
+		var theme=document.getElementById('theme');
+		var cut=document.getElementById('cut');
+		var divcut=document.getElementById('divcut');
+		var lonely=document.getElementById('lonely');
+		var lone=document.getElementById('lone');
+		var setting=document.getElementById('setting');
+		var setbackground=document.getElementById('setbackground');
+		var musicplayer=document.getElementById('musicplayer');
+		var musicplaying=document.getElementById('musicplaying');
+		var spring=document.getElementById('spring');
+		var boot=document.getElementById('boot');
+		var data=document.getElementById('data');
+		var storge=document.getElementById('storge');
+		var enroll=document.getElementById('enroll');
+		var register=document.getElementById('register');
+		var happy=document.getElementById('happy');
+		var birthday=document.getElementById('birthday');
+		var mvc=document.getElementById('mvc');
+		var festival=document.getElementById('festival');
+		var teacher=document.getElementById('teacher');
+		var teach=document.getElementById('teach');
+		var beautifymirror=document.getElementById('beautifymirror');
+		var cutmirror=document.getElementById('cutmirror');
+		var ayearsmirror=document.getElementById('afteryearsmirror');
+		var lonelymirror=document.getElementById('lonelymirror');
+		var settingmirror=document.getElementById('settingmirror');
+		var musicplayermirror=document.getElementById('musicplayermirror');
+		var springmirror=document.getElementById('springmirror');
+		var datamirror=document.getElementById('datamirror');
+		var enrollmirror=document.getElementById('enrollmirror');
+		var happymirror=document.getElementById('happymirror');
+		var mvcmirror=document.getElementById('mvcmirror');
+		var teachermirror=document.getElementById('teachermirror');
+		var beautify1=document.getElementById('beautify1');
+		var cut1=document.getElementById('cut1');
+		var ayears1=document.getElementById('afteryears1');
+		var lonely1=document.getElementById('lonely1');
+		var setting1=document.getElementById('setting1');
+		var musicplayer1=document.getElementById('musicplayer1');
+		var spring1=document.getElementById('spring1');
+		var data1=document.getElementById('data1');
+		var enroll1=document.getElementById('enroll1');
+		var happy1=document.getElementById('happy1');
+		var mvc1=document.getElementById('mvc1');
+		var teacher1=document.getElementById('teacher1');
+		var beautify2=document.getElementById('beautify2');
+		var data2=document.getElementById('data2');
+		var spring2=document.getElementById('spring2');
+		var ayears2=document.getElementById('afteryears2');
+		var happy2=document.getElementById('happy2');
+		var fpage=document.getElementById('firstpage');
+		var fmiddle=document.getElementById('firstmiddlepage');
+		var fsecondmiddle=document.getElementById('secondmiddlepage');
+		var fthirdmiddle=document.getElementById('thirdmiddlepage');
+		var spage=document.getElementById('secondpage');
+		var smiddle=document.getElementById('secondmiddle');
+		/*var tpage=document.getElementById('thirdpage');*/
+		/*var tmiddle=document.getElementById('thirdmiddle');*/
+		var fopage=document.getElementById('fourthpage');
+		var fomiddle=document.getElementById('fourthmiddle');
+		var fipage=document.getElementById('fifthpage');
+		var fimiddle=document.getElementById('fifthmiddle');
+		var opage=document.getElementById('onepage');
+		var omiddle=document.getElementById('onemiddle');
+		var afteryears=document.getElementById('afteryears');
+		var twopage=document.getElementById('twopage');
+		var twomiddle=document.getElementById('twomiddle');
+		var threepage=document.getElementById('threepage');
+		var threemiddle=document.getElementById('threemiddle');
+		var fourpage=document.getElementById('fourpage');
+		var fourmiddle=document.getElementById('fourmiddle');
+		var fivepage=document.getElementById('fivepage');
+		var fivemiddle=document.getElementById('fivemiddle');
+		var sixpage=document.getElementById('sixpage');
+		var sixmiddle=document.getElementById('sixmiddle');
+		var sevenpage=document.getElementById('sevenpage');
+		var sevenmiddle=document.getElementById('sevenmiddle');
+		var eightpage=document.getElementById('eightpage');
+		var eightmiddle=document.getElementById('eightmiddle');
+		var ninepage=document.getElementById('ninepage');
+		var ninemiddle=document.getElementById('ninemiddle');
+		var tenpage=document.getElementById('tenpage');
+		var tenmiddle=document.getElementById('tenmiddle');
+		var skip1=document.getElementById('skip1page');
+		var skip2=document.getElementById('skip2page');
+		var skip3=document.getElementById('skip3page');
+		var skip11=document.getElementById('skip11page');
+		var skip22=document.getElementById('skip22page');
+		var skip33=document.getElementById('skip33page');
+		var skip111=document.getElementById('skip111page');
+		var skip222=document.getElementById('skip222page');
+		var skip333=document.getElementById('skip333page');
+		var aduio=document.getElementById('aduio');
+		var videoplay=document.getElementById('videoplay');
+	    var finmessage=document.getElementById("finmessage");
+		var f1=document.getElementById('f1');
+		var f2=document.getElementById('f2');
+		var f3=document.getElementById('f3');
+		var f4=document.getElementById('f4');
+		var f5=document.getElementById('f5');
+		function getCurrentDb() {
+		    //打开数据库，或者直接连接数据库参数：数据库名称，版本，概述，大小
+		    var db = openDatabase("myDb", "1.0", "it's to save leaveword data!", 1024 * 1024); ;
+		    return db;
+		}
+		
+		window.onload = function() {
+			/*initDatabase();*/
+		    var db = getCurrentDb();
+		    
+		    db.transaction(function (trans) {
+		        trans.executeSql("select * from leaveword ", [], function (ts, data) {
+		            if (data) {
+						/*alert(data.rows.length);*/
+					    finmessage.innerHTML = data.rows.length;
+		            }
+		        }, function (ts, message) {
+		            alert(message);
+		            var tst = message;
+		        });
+		    });
+		}
+			 
+		
+		
+		
+		beautify2.onclick=function(){
+			sevenmiddle.className="middletext";
+			theme.className="showmiddletext";
+		}
+		data2.onclick=function(){
+			eightmiddle.className="middletext";
+			storge.className="showmiddletext";
+		}
+		spring2.onclick=function(){
+			ninemiddle.className="middletext";
+			boot.className="showmiddletext";
+		}
+		happy2.onclick=function(){
+			tenmiddle.className="middletext";
+			birthday.className="showmiddletext";
+		}
+		ayears2.onclick=function(){
+			tenmiddle.className="middletext";
+			fyears.className="showmiddletext";
+		}
+		
+		teacher1.onclick=function(){
+			sixmiddle.className="middletext";
+			teach.className="showmiddletext";
+		}
+		mvc1.onclick=function(){
+			sixmiddle.className="middletext";
+			festival.className="showmiddletext";
+		}
+		happy1.onclick=function(){
+			fivemiddle.className="middletext";
+			birthday.className="showmiddletext";
+		}
+		enroll1.onclick=function(){
+			fivemiddle.className="middletext";
+			register.className="showmiddletext";
+		}
+		data1.onclick=function(){
+			fivemiddle.className="middletext";
+			storge.className="showmiddletext";
+		}
+		spring1.onclick=function(){
+			fivemiddle.className="middletext";
+			boot.className="showmiddletext";
+		}
+		musicplayer1.onclick=function(){
+			fivemiddle.className="middletext";
+			musicplaying.className="showmiddletext";
+		}  
+		setting1.onclick=function(){
+			fivemiddle.className="middletext";
+			setbackground.className="showmiddletext";
+		}
+		lonely1.onclick=function(){
+			fourmiddle.className="middletext";
+			lone.className="showmiddletext";
+		}
+		cut1.onclick=function(){
+			fourmiddle.className="middletext";
+			divcut.className="showmiddletext";
+		}
+		ayears1.onclick = function () {
+			fourmiddle.className="middletext";
+			fyears.className="showmiddletext";
+		}
+		beautify1.onclick=function(){
+			fourmiddle.className="middletext";
+			theme.className="showmiddletext";
+		}
+		
+		
+		
+		teachermirror.onclick=function(){
+			threemiddle.className="middletext";
+			teach.className="showmiddletext";
+		}
+        mvcmirror.onclick=function(){
+        	threemiddle.className="middletext";
+        	festival.className="showmiddletext";
+        }
+        happymirror.onclick=function(){
+        	twomiddle.className="middletext";
+        	birthday.className="showmiddletext";
+        }
+        enrollmirror.onclick=function(){
+        	onemiddle.className="middletext";
+        	register.className="showmiddletext";
+        }
+        datamirror.onclick=function(){
+        	onemiddle.className="middletext";
+        	storge.className="showmiddletext";
+        }
+        springmirror.onclick=function(){
+        	onemiddle.className="middletext";
+        	boot.className="showmiddletext";
+        }
+        musicplayermirror.onclick=function(){
+        	onemiddle.className="middletext";
+        	musicplaying.className="showmiddletext";
+        }  
+        settingmirror.onclick=function(){
+        	onemiddle.className="middletext";
+        	setbackground.className="showmiddletext";
+        }
+        lonelymirror.onclick=function(){
+        	twomiddle.className="middletext";
+        	lone.className="showmiddletext";
+        }
+        cutmirror.onclick=function(){
+        	onemiddle.className="middletext";
+        	divcut.className="showmiddletext";
+        }
+        ayearsmirror.onclick = function () {
+        	twomiddle.className="middletext";
+        	fyears.className="showmiddletext";
+        }
+        beautifymirror.onclick=function(){
+        	onemiddle.className="middletext";
+        	theme.className="showmiddletext";
+        }
+        
+		
+		teacher.onclick=function(){
+			fthirdmiddle.className="middletext";
+			teach.className="showmiddletext";
+		}
+		mvc.onclick=function(){
+			fthirdmiddle.className="middletext";
+			festival.className="showmiddletext";
+		}
+		happy.onclick=function(){
+			fsecondmiddle.className="middletext";
+			birthday.className="showmiddletext";
+		}
+		enroll.onclick=function(){
+			fsecondmiddle.className="middletext";
+			register.className="showmiddletext";
+		}
+		data.onclick=function(){
+			fsecondmiddle.className="middletext";
+			storge.className="showmiddletext";
+		}
+		spring.onclick=function(){
+			fsecondmiddle.className="middletext";
+			boot.className="showmiddletext";
+		}
+		musicplayer.onclick=function(){
+			fsecondmiddle.className="middletext";
+			musicplaying.className="showmiddletext";
+		}  
+		setting.onclick=function(){
+			fmiddle.className="middletext";
+			setbackground.className="showmiddletext";
+		}
+		lonely.onclick=function(){
+			fmiddle.className="middletext";
+			lone.className="showmiddletext";
+		}
+		cut.onclick=function(){
+			fmiddle.className="middletext";
+			divcut.className="showmiddletext";
+		}
+		ayears.onclick = function () {
+			fmiddle.className="middletext";
+			fyears.className="showmiddletext";
+		}
+		beaufity.onclick=function(){
+			fmiddle.className="middletext";
+			theme.className="showmiddletext";
+		}
+		
+		f1.onclick=function(){
+			this.className='fd1after';
+			f2.className='fd1';
+			f3.className='fd1';
+			f4.className='fd1';
+			f5.className='fd1';
+			fpage.className = 'upper';
+			fmiddle.className = 'middletext';
+			fsecondmiddle.className="middletext";
+			fthirdmiddle.className="middletext";
+			fpage.className = 'upper';
+			smiddle.className = 'middletext';
+			/*tpage.className = 'upper';
+			tmiddle.className = 'middletext';*/
+			fopage.className = 'upper';
+			fomiddle.className = 'middletext';
+			fipage.className = 'upper';
+			fimiddle.className = 'middletext';
+			opage.className = 'effect';
+			omiddle.className = 'middletext';
+			twopage.className = 'effect';
+			twomiddle.className = 'middletext';
+			threepage.className = 'effect';
+			threemiddle.className = 'middletext';
+			fourpage.className = 'effect';
+			fourmiddle.className = 'middletext';
+			fivepage.className = 'effect';
+			fivemiddle.className = 'middletext';
+			sixpage.className = 'effect';
+			sixmiddle.className = 'middletext';
+			sevenpage.className = 'effect';
+			sevenmiddle.className = 'middletext';
+			eightpage.className = 'effect';
+			eightmiddle.className = 'middletext';
+			ninepage.className = 'effect';
+			ninemiddle.className = 'middletext';
+			tenpage.className = 'effect';
+			tenmiddle.className = 'middletext';
+			fyears.className="middletext";
+			theme.className="showmiddletext";
+			divcut.className='middletext';
+			lone.className="middletext";
+			setbackground.className="middletext";
+			musicplaying.className="middletext";
+			boot.className="middletext";
+			storge.className="middletext";
+			register.className="middletext";
+			birthday.className="middletext";
+			festival.className="middletext";
+			teach.className="middletext";
+		}
+		f2.onclick=function(){
+			f1.className='fd1';
+			this.className='fd1after';
+			f3.className='fd1';
+			f4.className='fd1';
+			f5.className='fd1';
+			fpage.className = 'upper';
+			fmiddle.className = 'middletext';
+			fsecondmiddle.className="middletext";
+			fthirdmiddle.className="middletext";
+			fpage.className = 'upper';
+			smiddle.className = 'middletext';
+			/*tpage.className = 'upper';
+			tmiddle.className = 'middletext';*/
+			fopage.className = 'upper';
+			fomiddle.className = 'middletext';
+			fipage.className = 'upper';
+			fimiddle.className = 'middletext';
+			opage.className = 'effect';
+			omiddle.className = 'middletext';
+			twopage.className = 'effect';
+			twomiddle.className = 'middletext';
+			threepage.className = 'effect';
+			threemiddle.className = 'middletext';
+			fourpage.className = 'effect';
+			fourmiddle.className = 'middletext';
+			fivepage.className = 'effect';
+			fivemiddle.className = 'middletext';
+			sixpage.className = 'effect';
+			sixmiddle.className = 'middletext';
+			sevenpage.className = 'effect';
+			sevenmiddle.className = 'middletext';
+			eightpage.className = 'effect';
+			eightmiddle.className = 'middletext';
+			ninepage.className = 'effect';
+			ninemiddle.className = 'middletext';
+			tenpage.className = 'effect';
+			tenmiddle.className = 'middletext';
+			fyears.className="middletext";
+			theme.className="middletext";
+			divcut.className='showmiddletext';
+			lone.className="middletext";
+			setbackground.className="middletext";
+			musicplaying.className="middletext";
+			boot.className="middletext";
+			storge.className="middletext";
+			register.className="middletext";
+			birthday.className="middletext";
+			festival.className="middletext";
+			teach.className="middletext";
+		}
+		f3.onclick=function(){
+			f1.className='fd1';
+			f2.className='fd1';
+			this.className='fd1after';
+			f4.className='fd1';
+			f5.className='fd1';
+			fpage.className = 'upper';
+			fmiddle.className = 'middletext';
+			fsecondmiddle.className="middletext";
+			fthirdmiddle.className="middletext";
+			fpage.className = 'upper';
+			smiddle.className = 'middletext';
+			/*tpage.className = 'upper';
+			tmiddle.className = 'middletext';*/
+			fopage.className = 'upper';
+			fomiddle.className = 'middletext';
+			fipage.className = 'upper';
+			fimiddle.className = 'middletext';
+			opage.className = 'effect';
+			omiddle.className = 'middletext';
+			twopage.className = 'effect';
+			twomiddle.className = 'middletext';
+			threepage.className = 'effect';
+			threemiddle.className = 'middletext';
+			fourpage.className = 'effect';
+			fourmiddle.className = 'middletext';
+			fivepage.className = 'effect';
+			fivemiddle.className = 'middletext';
+			sixpage.className = 'effect';
+			sixmiddle.className = 'middletext';
+			sevenpage.className = 'effect';
+			sevenmiddle.className = 'middletext';
+			eightpage.className = 'effect';
+			eightmiddle.className = 'middletext';
+			ninepage.className = 'effect';
+			ninemiddle.className = 'middletext';
+			tenpage.className = 'effect';
+			tenmiddle.className = 'middletext';
+			fyears.className="middletext";
+			theme.className="middletext";
+			divcut.className='middletext';
+			lone.className="middletext";
+			setbackground.className="middletext";
+			musicplaying.className="middletext";
+			boot.className="middletext";
+			storge.className="showmiddletext";
+			register.className="middletext";
+			birthday.className="middletext";
+			festival.className="middletext";
+			teach.className="middletext";
+		}
+		f4.onclick=function(){
+			f1.className='fd1';
+			f2.className='fd1';
+			f3.className='fd1';
+			this.className='fd1after';
+			f5.className='fd1';
+			fpage.className = 'upper';
+			fmiddle.className = 'middletext';
+			fsecondmiddle.className="middletext";
+			fthirdmiddle.className="middletext";
+			fpage.className = 'upper';
+			smiddle.className = 'middletext';
+			/*tpage.className = 'upper';
+			tmiddle.className = 'middletext';*/
+			fopage.className = 'upper';
+			fomiddle.className = 'middletext';
+			fipage.className = 'upper';
+			fimiddle.className = 'middletext';
+			opage.className = 'effect';
+			omiddle.className = 'middletext';
+			twopage.className = 'effect';
+			twomiddle.className = 'middletext';
+			threepage.className = 'effect';
+			threemiddle.className = 'middletext';
+			fourpage.className = 'effect';
+			fourmiddle.className = 'middletext';
+			fivepage.className = 'effect';
+			fivemiddle.className = 'middletext';
+			sixpage.className = 'effect';
+			sixmiddle.className = 'middletext';
+			sevenpage.className = 'effect';
+			sevenmiddle.className = 'middletext';
+			eightpage.className = 'effect';
+			eightmiddle.className = 'middletext';
+			ninepage.className = 'effect';
+			ninemiddle.className = 'middletext';
+			tenpage.className = 'effect';
+			tenmiddle.className = 'middletext';
+			fyears.className="middletext";
+			theme.className="middletext";
+			divcut.className='middletext';
+			lone.className="middletext";
+			setbackground.className="middletext";
+			musicplaying.className="middletext";
+			boot.className="showmiddletext";
+			storge.className="middletext";
+			register.className="middletext";
+			birthday.className="middletext";
+			festival.className="middletext";
+			teach.className="middletext";
+		}
+		f5.onclick=function(){
+			f1.className='fd1';
+			f2.className='fd1';
+			f3.className='fd1';
+			f4.className='fd1';
+			this.className='fd1after';
+			fpage.className = 'upper';
+			fmiddle.className = 'middletext';
+			fsecondmiddle.className="middletext";
+			fthirdmiddle.className="middletext";
+			fpage.className = 'upper';
+			smiddle.className = 'middletext';
+			/*tpage.className = 'upper';
+			tmiddle.className = 'middletext';*/
+			fopage.className = 'upper';
+			fomiddle.className = 'middletext';
+			fipage.className = 'upper';
+			fimiddle.className = 'middletext';
+			opage.className = 'effect';
+			omiddle.className = 'middletext';
+			twopage.className = 'effect';
+			twomiddle.className = 'middletext';
+			threepage.className = 'effect';
+			threemiddle.className = 'middletext';
+			fourpage.className = 'effect';
+			fourmiddle.className = 'middletext';
+			fivepage.className = 'effect';
+			fivemiddle.className = 'middletext';
+			sixpage.className = 'effect';
+			sixmiddle.className = 'middletext';
+			sevenpage.className = 'effect';
+			sevenmiddle.className = 'middletext';
+			eightpage.className = 'effect';
+			eightmiddle.className = 'middletext';
+			ninepage.className = 'effect';
+			ninemiddle.className = 'middletext';
+			tenpage.className = 'effect';
+			tenmiddle.className = 'middletext';
+			fyears.className="middletext";
+			theme.className="middletext";
+			divcut.className='middletext';
+			lone.className="middletext";
+			setbackground.className="middletext";
+			musicplaying.className="middletext";
+			boot.className="middletext";
+			storge.className="showmiddletext";
+			register.className="middletext";
+			birthday.className="middletext";
+			festival.className="middletext";
+			teach.className="middletext";
+		}
+		
+		fpage.onclick = function () {
+			this.className = 'active';
+			fmiddle.className = 'showmiddletext';
+			fsecondmiddle.className="middletext";
+			fthirdmiddle.className="middletext";
+			spage.className = 'upper';
+			smiddle.className = 'middletext';
+			/*tpage.className = 'upper';
+			tmiddle.className = 'middletext';*/
+			fopage.className = 'upper';
+			fomiddle.className = 'middletext';
+			fipage.className = 'upper';
+			fimiddle.className = 'middletext';
+			opage.className = 'effect';
+			omiddle.className = 'middletext';
+			twopage.className = 'effect';
+			twomiddle.className = 'middletext';
+			threepage.className = 'effect';
+			threemiddle.className = 'middletext';
+			fourpage.className = 'effect';
+			fourmiddle.className = 'middletext';
+			fivepage.className = 'effect';
+			fivemiddle.className = 'middletext';
+			sixpage.className = 'effect';
+			sixmiddle.className = 'middletext';
+			sevenpage.className = 'effect';
+			sevenmiddle.className = 'middletext';
+			eightpage.className = 'effect';
+			eightmiddle.className = 'middletext';
+			ninepage.className = 'effect';
+			ninemiddle.className = 'middletext';
+			tenpage.className = 'effect';
+			tenmiddle.className = 'middletext';
+			fyears.className="middletext";
+			theme.className="middletext";
+			divcut.className='middletext';
+			lone.className="middletext";
+			setbackground.className="middletext";
+			musicplaying.className="middletext";
+			boot.className="middletext";
+			storge.className="middletext";
+			register.className="middletext";
+			birthday.className="middletext";
+			festival.className="middletext";
+			teach.className="middletext";
+			f1.className='fd1';
+			f2.className='fd1';
+			f3.className='fd1';
+			f4.className='fd1';
+			f5.className='fd1';
+		};
+		
+		spage.onclick = function () {
+			fpage.className = 'upper';
+			fmiddle.className = 'middletext';
+			fsecondmiddle.className="middletext";
+			fthirdmiddle.className="middletext";
+			this.className = 'active';
+			smiddle.className = 'showmiddletext';
+			/*tpage.className = 'upper';
+			tmiddle.className = 'middletext';*/
+			fopage.className = 'upper';
+			fomiddle.className = 'middletext';
+			fipage.className = 'upper';
+			fimiddle.className = 'middletext';
+			opage.className = 'effect';
+			omiddle.className = 'middletext';
+			twopage.className = 'effect';
+			twomiddle.className = 'middletext';
+			threepage.className = 'effect';
+			threemiddle.className = 'middletext';
+			fourpage.className = 'effect';
+			fourmiddle.className = 'middletext';
+			fivepage.className = 'effect';
+			fivemiddle.className = 'middletext';
+			sixpage.className = 'effect';
+			sixmiddle.className = 'middletext';
+			sevenpage.className = 'effect';
+			sevenmiddle.className = 'middletext';
+			eightpage.className = 'effect';
+			eightmiddle.className = 'middletext';
+			ninepage.className = 'effect';
+			ninemiddle.className = 'middletext';
+			tenpage.className = 'effect';
+			tenmiddle.className = 'middletext';
+			fyears.className="middletext";
+			theme.className="middletext";
+			divcut.className='middletext';
+			lone.className="middletext";
+			setbackground.className="middletext";
+			musicplaying.className="middletext";
+			boot.className="middletext";
+			storge.className="middletext";
+			register.className="middletext";
+			birthday.className="middletext";
+			festival.className="middletext";
+			teach.className="middletext";
+			f1.className='fd1';
+			f2.className='fd1';
+			f3.className='fd1';
+			f4.className='fd1';
+			f5.className='fd1';
+		};
+		
+		/*tpage.onclick = function () {
+			fpage.className = 'upper';
+			fmiddle.className = 'middletext';
+			fsecondmiddle.className="middletext";
+			fthirdmiddle.className="middletext";
+			spage.className = 'upper';
+			smiddle.className = 'middletext';
+			this.className = 'active';
+			tmiddle.className = 'showmiddletext';
+			fopage.className = 'upper';
+			fomiddle.className = 'middletext';
+			fipage.className = 'upper';
+			fimiddle.className = 'middletext';
+			opage.className = 'effect';
+			omiddle.className = 'middletext';
+			twopage.className = 'effect';
+			twomiddle.className = 'middletext';
+			threepage.className = 'effect';
+			threemiddle.className = 'middletext';
+			fourpage.className = 'effect';
+			fourmiddle.className = 'middletext';
+			fivepage.className = 'effect';
+			fivemiddle.className = 'middletext';
+			sixpage.className = 'effect';
+			sixmiddle.className = 'middletext';
+			sevenpage.className = 'effect';
+			sevenmiddle.className = 'middletext';
+			eightpage.className = 'effect';
+			eightmiddle.className = 'middletext';
+			ninepage.className = 'effect';
+			ninemiddle.className = 'middletext';
+			tenpage.className = 'effect';
+			tenmiddle.className = 'middletext';
+			fyears.className="middletext";
+			theme.className="middletext";
+			divcut.className='middletext';
+			lone.className="middletext";
+			setbackground.className="middletext";
+			musicplaying.className="middletext";
+			boot.className="middletext";
+			storge.className="middletext";
+			register.className="middletext";
+			birthday.className="middletext";
+			festival.className="middletext";
+			teach.className="middletext";
+			f1.className='fd1';
+			f2.className='fd1';
+			f3.className='fd1';
+			f4.className='fd1';
+			f5.className='fd1';
+		};*/
+		
+		fopage.onclick = function () {
+			fpage.className = 'upper';
+			fmiddle.className = 'middletext';
+			fsecondmiddle.className="middletext";
+			fthirdmiddle.className="middletext";
+			spage.className = 'upper';
+			smiddle.className = 'middletext';
+			/*tpage.className = 'upper';
+			tmiddle.className = 'middletext';*/
+			this.className = 'active';
+			fomiddle.className = 'showmiddletext';
+			fipage.className = 'upper';
+			fimiddle.className = 'middletext';
+			opage.className = 'effect';
+			omiddle.className = 'middletext';
+			twopage.className = 'effect';
+			twomiddle.className = 'middletext';
+			threepage.className = 'effect';
+			threemiddle.className = 'middletext';
+			fourpage.className = 'effect';
+			fourmiddle.className = 'middletext';
+			fivepage.className = 'effect';
+			fivemiddle.className = 'middletext';
+			sixpage.className = 'effect';
+			sixmiddle.className = 'middletext';
+			sevenpage.className = 'effect';
+			sevenmiddle.className = 'middletext';
+			eightpage.className = 'effect';
+			eightmiddle.className = 'middletext';
+			ninepage.className = 'effect';
+			ninemiddle.className = 'middletext';
+			tenpage.className = 'effect';
+			tenmiddle.className = 'middletext';
+			fyears.className="middletext";
+			theme.className="middletext";
+			divcut.className='middletext';
+			lone.className="middletext";
+			setbackground.className="middletext";
+			musicplaying.className="middletext";
+			boot.className="middletext";
+			storge.className="middletext";
+			register.className="middletext";
+			birthday.className="middletext";
+			festival.className="middletext";
+			teach.className="middletext";
+			f1.className='fd1';
+			f2.className='fd1';
+			f3.className='fd1';
+			f4.className='fd1';
+			f5.className='fd1';
+		};
+		
+		fipage.onclick = function () {
+			fpage.className = 'upper';
+			fmiddle.className = 'middletext';
+			fsecondmiddle.className="middletext";
+			fthirdmiddle.className="middletext";
+			spage.className = 'upper';
+			smiddle.className = 'middletext';
+			/*tpage.className = 'upper';
+			tmiddle.className = 'middletext';*/
+			fopage.className = 'upper';
+			fomiddle.className = 'middletext';
+			this.className = 'active';
+			fimiddle.className = 'showmiddletext';
+			opage.className = 'effect';
+			omiddle.className = 'middletext';
+			twopage.className = 'effect';
+			twomiddle.className = 'middletext';
+			threepage.className = 'effect';
+			threemiddle.className = 'middletext';
+			fourpage.className = 'effect';
+			fourmiddle.className = 'middletext';
+			fivepage.className = 'effect';
+			fivemiddle.className = 'middletext';
+			sixpage.className = 'effect';
+			sixmiddle.className = 'middletext';
+			sevenpage.className = 'effect';
+			sevenmiddle.className = 'middletext';
+			eightpage.className = 'effect';
+			eightmiddle.className = 'middletext';
+			ninepage.className = 'effect';
+			ninemiddle.className = 'middletext';
+			tenpage.className = 'effect';
+			tenmiddle.className = 'middletext';
+			fyears.className="middletext";
+			theme.className="middletext";
+			divcut.className='middletext';
+			lone.className="middletext";
+			setbackground.className="middletext";
+			musicplaying.className="middletext";
+			boot.className="middletext";
+			storge.className="middletext";
+			register.className="middletext";
+			birthday.className="middletext";
+			festival.className="middletext";
+			teach.className="middletext";
+			f1.className='fd1';
+			f2.className='fd1';
+			f3.className='fd1';
+			f4.className='fd1';
+			f5.className='fd1';
+		};
+		
+		opage.onclick = function () {
+			fpage.className = 'upper';
+			fmiddle.className = 'middletext';
+			fsecondmiddle.className="middletext";
+			fthirdmiddle.className="middletext";
+			spage.className = 'upper';
+			smiddle.className = 'middletext';
+			/*tpage.className = 'upper';
+			tmiddle.className = 'middletext';*/
+			fopage.className = 'upper';
+			fomiddle.className = 'middletext';
+			fipage.className = 'upper';
+			fimiddle.className = 'middletext';
+			this.className = 'activecom';
+			omiddle.className = 'showmiddletext';
+			twopage.className = 'effect';
+			twomiddle.className = 'middletext';
+			threepage.className = 'effect';
+			threemiddle.className = 'middletext';
+			fourpage.className = 'effect';
+			fourmiddle.className = 'middletext';
+			fivepage.className = 'effect';
+			fivemiddle.className = 'middletext';
+			sixpage.className = 'effect';
+			sixmiddle.className = 'middletext';
+			sevenpage.className = 'effect';
+			sevenmiddle.className = 'middletext';
+			eightpage.className = 'effect';
+			eightmiddle.className = 'middletext';
+			ninepage.className = 'effect';
+			ninemiddle.className = 'middletext';
+			tenpage.className = 'effect';
+			tenmiddle.className = 'middletext';
+			fyears.className="middletext";
+			theme.className="middletext";
+			divcut.className='middletext';
+			lone.className="middletext";
+			setbackground.className="middletext";
+			musicplaying.className="middletext";
+			boot.className="middletext";
+			storge.className="middletext";
+			register.className="middletext";
+			birthday.className="middletext";
+			festival.className="middletext";
+			teach.className="middletext";
+			f1.className='fd1';
+			f2.className='fd1';
+			f3.className='fd1';
+			f4.className='fd1';
+			f5.className='fd1';
+		};
+		
+		twopage.onclick = function () {
+			fpage.className = 'upper';
+			fmiddle.className = 'middletext';
+			fsecondmiddle.className="middletext";
+			fthirdmiddle.className="middletext";
+			spage.className = 'upper';
+			smiddle.className = 'middletext';
+			/*tpage.className = 'upper';
+			tmiddle.className = 'middletext';*/
+			fopage.className = 'upper';
+			fomiddle.className = 'middletext';
+			fipage.className = 'upper';
+			fimiddle.className = 'middletext';
+			opage.className = 'effect';
+			omiddle.className = 'middletext';
+			this.className = 'activecom';
+			twomiddle.className = 'showmiddletext';
+			threepage.className = 'effect';
+			threemiddle.className = 'middletext';
+			fourpage.className = 'effect';
+			fourmiddle.className = 'middletext';
+			fivepage.className = 'effect';
+			fivemiddle.className = 'middletext';
+			sixpage.className = 'effect';
+			sixmiddle.className = 'middletext';
+			sevenpage.className = 'effect';
+			sevenmiddle.className = 'middletext';
+			eightpage.className = 'effect';
+			eightmiddle.className = 'middletext';
+			ninepage.className = 'effect';
+			ninemiddle.className = 'middletext';
+			tenpage.className = 'effect';
+			tenmiddle.className = 'middletext';
+			fyears.className="middletext";
+			theme.className="middletext";
+			divcut.className='middletext';
+			lone.className="middletext";
+			setbackground.className="middletext";
+			musicplaying.className="middletext";
+			boot.className="middletext";
+			storge.className="middletext";
+			register.className="middletext";
+			birthday.className="middletext";
+			festival.className="middletext";
+			teach.className="middletext";
+			f1.className='fd1';
+			f2.className='fd1';
+			f3.className='fd1';
+			f4.className='fd1';
+			f5.className='fd1';
+		};
+		
+		threepage.onclick = function () {
+			fpage.className = 'upper';
+			fmiddle.className = 'middletext';
+			fsecondmiddle.className="middletext";
+			fthirdmiddle.className="middletext";
+			spage.className = 'upper';
+			smiddle.className = 'middletext';
+			/*tpage.className = 'upper';
+			tmiddle.className = 'middletext';*/
+			fopage.className = 'upper';
+			fomiddle.className = 'middletext';
+			fipage.className = 'upper';
+			fimiddle.className = 'middletext';
+			opage.className = 'effect';
+			omiddle.className = 'middletext';
+			twopage.className = 'effect';
+			twomiddle.className = 'middletext';
+			this.className = 'activecom';
+			threemiddle.className = 'showmiddletext';
+			fourpage.className = 'effect';
+			fourmiddle.className = 'middletext';
+			fivepage.className = 'effect';
+			fivemiddle.className = 'middletext';
+			sixpage.className = 'effect';
+			sixmiddle.className = 'middletext';
+			sevenpage.className = 'effect';
+			sevenmiddle.className = 'middletext';
+			eightpage.className = 'effect';
+			eightmiddle.className = 'middletext';
+			ninepage.className = 'effect';
+			ninemiddle.className = 'middletext';
+			tenpage.className = 'effect';
+			tenmiddle.className = 'middletext';
+			fyears.className="middletext";
+			theme.className="middletext";
+			divcut.className='middletext';
+			lone.className="middletext";
+			setbackground.className="middletext";
+			musicplaying.className="middletext";
+			boot.className="middletext";
+			storge.className="middletext";
+			register.className="middletext";
+			birthday.className="middletext";
+			festival.className="middletext";
+			teach.className="middletext";
+			f1.className='fd1';
+			f2.className='fd1';
+			f3.className='fd1';
+			f4.className='fd1';
+			f5.className='fd1';
+		};
+		
+		fourpage.onclick = function () {
+		    
+			fpage.className = 'upper';
+			fmiddle.className = 'middletext';
+			fsecondmiddle.className="middletext";
+			fthirdmiddle.className="middletext";
+			spage.className = 'upper';
+			smiddle.className = 'middletext';
+			/*tpage.className = 'upper';
+			tmiddle.className = 'middletext';*/
+			fopage.className = 'upper';
+			fomiddle.className = 'middletext';
+			fipage.className = 'upper';
+			fimiddle.className = 'middletext';
+			opage.className = 'effect';
+			omiddle.className = 'middletext';
+			twopage.className = 'effect';
+			twomiddle.className = 'middletext';
+			threepage.className = 'effect';
+			threemiddle.className = 'middletext';
+			this.className = 'activecom';
+			fourmiddle.className = 'showmiddletext';
+			fivepage.className = 'effect';
+			fivemiddle.className = 'middletext';
+			sixpage.className = 'effect';
+			sixmiddle.className = 'middletext';
+			sevenpage.className = 'effect';
+			sevenmiddle.className = 'middletext';
+			eightpage.className = 'effect';
+			eightmiddle.className = 'middletext';
+			ninepage.className = 'effect';
+			ninemiddle.className = 'middletext';
+			tenpage.className = 'effect';
+			tenmiddle.className = 'middletext';
+			fyears.className="middletext";
+			theme.className="middletext";
+			divcut.className='middletext';
+			lone.className="middletext";
+			setbackground.className="middletext";
+			musicplaying.className="middletext";
+			boot.className="middletext";
+			storge.className="middletext";
+			register.className="middletext";
+			birthday.className="middletext";
+			festival.className="middletext";
+			teach.className="middletext";
+			f1.className='fd1';
+			f2.className='fd1';
+			f3.className='fd1';
+			f4.className='fd1';
+			f5.className='fd1';
+			
+		};
+		
+		fivepage.onclick = function () {
+			fpage.className = 'upper';
+			fmiddle.className = 'middletext';
+			fsecondmiddle.className="middletext";
+			fthirdmiddle.className="middletext";
+			spage.className = 'upper';
+			smiddle.className = 'middletext';
+			/*tpage.className = 'upper';
+			tmiddle.className = 'middletext';*/
+			fopage.className = 'upper';
+			fomiddle.className = 'middletext';
+			fipage.className = 'upper';
+			fimiddle.className = 'middletext';
+			opage.className = 'effect';
+			omiddle.className = 'middletext';
+			twopage.className = 'effect';
+			twomiddle.className = 'middletext';
+			threepage.className = 'effect';
+			threemiddle.className = 'middletext';
+			fourpage.className = 'effect';
+			fourmiddle.className = 'middletext';
+			this.className = 'activecom';
+			fivemiddle.className = 'showmiddletext';
+			sixpage.className = 'effect';
+			sixmiddle.className = 'middletext';
+			sevenpage.className = 'effect';
+			sevenmiddle.className = 'middletext';
+			eightpage.className = 'effect';
+			eightmiddle.className = 'middletext';
+			ninepage.className = 'effect';
+			ninemiddle.className = 'middletext';
+			tenpage.className = 'effect';
+			tenmiddle.className = 'middletext';
+			fyears.className="middletext";
+			theme.className="middletext";
+			divcut.className='middletext';
+			lone.className="middletext";
+			setbackground.className="middletext";
+			musicplaying.className="middletext";
+			boot.className="middletext";
+			storge.className="middletext";
+			register.className="middletext";
+			birthday.className="middletext";
+			festival.className="middletext";
+			teach.className="middletext";
+			f1.className='fd1';
+			f2.className='fd1';
+			f3.className='fd1';
+			f4.className='fd1';
+			f5.className='fd1';
+		};
+		
+		sixpage.onclick = function () {
+			fpage.className = 'upper';
+			fmiddle.className = 'middletext';
+			fsecondmiddle.className="middletext";
+			fthirdmiddle.className="middletext";
+			spage.className = 'upper';
+			smiddle.className = 'middletext';
+			/*tpage.className = 'upper';
+			tmiddle.className = 'middletext';*/
+			fopage.className = 'upper';
+			fomiddle.className = 'middletext';
+			fipage.className = 'upper';
+			fimiddle.className = 'middletext';
+			opage.className = 'effect';
+			omiddle.className = 'middletext';
+			twopage.className = 'effect';
+			twomiddle.className = 'middletext';
+			threepage.className = 'effect';
+			threemiddle.className = 'middletext';
+			fourpage.className = 'effect';
+			fourmiddle.className = 'middletext';
+			fivepage.className = 'effect';
+			fivemiddle.className = 'middletext';
+			this.className = 'activecom';
+			sixmiddle.className = 'showmiddletext';
+			sevenpage.className = 'effect';
+			sevenmiddle.className = 'middletext';
+			eightpage.className = 'effect';
+			eightmiddle.className = 'middletext';
+			ninepage.className = 'effect';
+			ninemiddle.className = 'middletext';
+			tenpage.className = 'effect';
+			tenmiddle.className = 'middletext';
+			fyears.className="middletext";
+			theme.className="middletext";
+			divcut.className='middletext';
+			lone.className="middletext";
+			setbackground.className="middletext";
+			musicplaying.className="middletext";
+			boot.className="middletext";
+			storge.className="middletext";
+			register.className="middletext";
+			birthday.className="middletext";
+			festival.className="middletext";
+			teach.className="middletext";
+			f1.className='fd1';
+			f2.className='fd1';
+			f3.className='fd1';
+			f4.className='fd1';
+			f5.className='fd1';
+		};
+		
+		sevenpage.onclick = function () {
+			fpage.className = 'upper';
+			fmiddle.className = 'middletext';
+			fsecondmiddle.className="middletext";
+			fthirdmiddle.className="middletext";
+			spage.className = 'upper';
+			smiddle.className = 'middletext';
+			/*tpage.className = 'upper';
+			tmiddle.className = 'middletext';*/
+			fopage.className = 'upper';
+			fomiddle.className = 'middletext';
+			fipage.className = 'upper';
+			fimiddle.className = 'middletext';
+			opage.className = 'effect';
+			omiddle.className = 'middletext';
+			twopage.className = 'effect';
+			twomiddle.className = 'middletext';
+			threepage.className = 'effect';
+			threemiddle.className = 'middletext';
+			fourpage.className = 'effect';
+			fourmiddle.className = 'middletext';
+			fivepage.className = 'effect';
+			fivemiddle.className = 'middletext';
+			sixpage.className = 'effect';
+			sixmiddle.className = 'middletext';
+			this.className = 'activecom';
+			sevenmiddle.className = 'showmiddletext';
+			eightpage.className = 'effect';
+			eightmiddle.className = 'middletext';
+			ninepage.className = 'effect';
+			ninemiddle.className = 'middletext';
+			tenpage.className = 'effect';
+			tenmiddle.className = 'middletext';
+			fyears.className="middletext";
+			theme.className="middletext";
+			divcut.className='middletext';
+			lone.className="middletext";
+			setbackground.className="middletext";
+			musicplaying.className="middletext";
+			boot.className="middletext";
+			storge.className="middletext";
+			register.className="middletext";
+			birthday.className="middletext";
+			festival.className="middletext";
+			teach.className="middletext";
+			f1.className='fd1';
+			f2.className='fd1';
+			f3.className='fd1';
+			f4.className='fd1';
+			f5.className='fd1';
+		};
+		eightpage.onclick = function () {
+			fpage.className = 'upper';
+			fmiddle.className = 'middletext';
+			fsecondmiddle.className="middletext";
+			fthirdmiddle.className="middletext";
+			spage.className = 'upper';
+			smiddle.className = 'middletext';
+			/*tpage.className = 'upper';
+			tmiddle.className = 'middletext';*/
+			fopage.className = 'upper';
+			fomiddle.className = 'middletext';
+			fipage.className = 'upper';
+			fimiddle.className = 'middletext';
+			opage.className = 'effect';
+			omiddle.className = 'middletext';
+			twopage.className = 'effect';
+			twomiddle.className = 'middletext';
+			threepage.className = 'effect';
+			threemiddle.className = 'middletext';
+			fourpage.className = 'effect';
+			fourmiddle.className = 'middletext';
+			fivepage.className = 'effect';
+			fivemiddle.className = 'middletext';
+			sixpage.className = 'effect';
+			sixmiddle.className = 'middletext';
+			sevenpage.className = 'effect';
+			sevenmiddle.className = 'middletext';
+			this.className = 'activecom';
+			eightmiddle.className = 'showmiddletext';
+			ninepage.className = 'effect';
+			ninemiddle.className = 'middletext';
+			tenpage.className = 'effect';
+			tenmiddle.className = 'middletext';
+			fyears.className="middletext";
+			theme.className="middletext";
+			divcut.className='middletext';
+			lone.className="middletext";
+			setbackground.className="middletext";
+			musicplaying.className="middletext";
+			boot.className="middletext";
+			storge.className="middletext";
+			register.className="middletext";
+			birthday.className="middletext";
+			festival.className="middletext";
+			teach.className="middletext";
+			f1.className='fd1';
+			f2.className='fd1';
+			f3.className='fd1';
+			f4.className='fd1';
+			f5.className='fd1';
+		};
+		
+		ninepage.onclick = function () {
+			fpage.className = 'upper';
+			fmiddle.className = 'middletext';
+			fsecondmiddle.className="middletext";
+			fthirdmiddle.className="middletext";
+			spage.className = 'upper';
+			smiddle.className = 'middletext';
+			/*tpage.className = 'upper';
+			tmiddle.className = 'middletext';*/
+			fopage.className = 'upper';
+			fomiddle.className = 'middletext';
+			fipage.className = 'upper';
+			fimiddle.className = 'middletext';
+			opage.className = 'effect';
+			omiddle.className = 'middletext';
+			twopage.className = 'effect';
+			twomiddle.className = 'middletext';
+			threepage.className = 'effect';
+			threemiddle.className = 'middletext';
+			fourpage.className = 'effect';
+			fourmiddle.className = 'middletext';
+			fivepage.className = 'effect';
+			fivemiddle.className = 'middletext';
+			sixpage.className = 'effect';
+			sixmiddle.className = 'middletext';
+			sevenpage.className = 'effect';
+			sevenmiddle.className = 'middletext';
+			eightpage.className = 'effect';
+			eightmiddle.className = 'middletext';
+			this.className = 'activecom';
+			ninemiddle.className = 'showmiddletext';
+			tenpage.className = 'effect';
+			tenmiddle.className = 'middletext';
+			fyears.className="middletext";
+			theme.className="middletext";
+			divcut.className='middletext';
+			lone.className="middletext";
+			setbackground.className="middletext";
+			musicplaying.className="middletext";
+			boot.className="middletext";
+			storge.className="middletext";
+			register.className="middletext";
+			birthday.className="middletext";
+			festival.className="middletext";
+			teach.className="middletext";
+			f1.className='fd1';
+			f2.className='fd1';
+			f3.className='fd1';
+			f4.className='fd1';
+			f5.className='fd1';
+		};
+		
+		tenpage.onclick = function () {
+			fpage.className = 'upper';
+			fmiddle.className = 'middletext';
+			fsecondmiddle.className="middletext";
+			fthirdmiddle.className="middletext";
+			spage.className = 'upper';
+			smiddle.className = 'middletext';
+			/*tpage.className = 'upper';
+			tmiddle.className = 'middletext';*/
+			fopage.className = 'upper';
+			fomiddle.className = 'middletext';
+			fipage.className = 'upper';
+			fimiddle.className = 'middletext';
+			opage.className = 'effect';
+			omiddle.className = 'middletext';
+			twopage.className = 'effect';
+			twomiddle.className = 'middletext';
+			threepage.className = 'effect';
+			threemiddle.className = 'middletext';
+			fourpage.className = 'effect';
+			fourmiddle.className = 'middletext';
+			fivepage.className = 'effect';
+			fivemiddle.className = 'middletext';
+			sixpage.className = 'effect';
+			sixmiddle.className = 'middletext';
+			sevenpage.className = 'effect';
+			sevenmiddle.className = 'middletext';
+			eightpage.className = 'effect';
+			eightmiddle.className = 'middletext';
+			ninepage.className = 'effect';
+			ninemiddle.className = 'middletext';
+			this.className = 'activecom';
+			tenmiddle.className = 'showmiddletext';
+			fyears.className="middletext";
+			theme.className="middletext";
+			divcut.className='middletext';
+			lone.className="middletext";
+			setbackground.className="middletext";
+			musicplaying.className="middletext";
+			boot.className="middletext";
+			storge.className="middletext";
+			register.className="middletext";
+			birthday.className="middletext";
+			festival.className="middletext";
+			teach.className="middletext";
+			f1.className='fd1';
+			f2.className='fd1';
+			f3.className='fd1';
+			f4.className='fd1';
+			f5.className='fd1';
+		};
+		
+		skip11.onclick = function () {
+			skip1.className = 'skipnow';
+			fmiddle.className = 'showmiddletext';
+			skip2.className='skip1';
+			fsecondmiddle.className='middletext';
+			skip3.className='skip1';
+			fthirdmiddle.className="middletext";
+		};
+		skip111.onclick = function () {
+			skip1.className = 'skipnow';
+			fmiddle.className = 'showmiddletext';
+			skip2.className='skip1';
+			fsecondmiddle.className='middletext';
+			skip3.className='skip1';
+			fthirdmiddle.className="middletext";
+		};
+		skip2.onclick = function () {
+			skip1.className = 'skip1';
+			fmiddle.className = 'middletext';
+			skip22.className='skipnow';
+			fsecondmiddle.className='showmiddletext';
+		};
+		skip222.onclick = function () {
+			skip11.className = 'skip1';
+			fmiddle.className = 'middletext';
+			skip22.className='skipnow';
+			fsecondmiddle.className='showmiddletext';
+			skip33.className='skip1';
+			fthirdmiddle.className="middletext";
+		};
+		skip3.onclick = function () {
+			skip111.className = 'skip1';
+			fmiddle.className = 'middletext';
+			skip222.className='skip1';
+			fsecondmiddle.className='middletext';
+			skip333.className='skipnow';
+			fthirdmiddle.className="showmiddletext";
+		};
+		skip33.onclick = function () {
+			skip111.className = 'skip1';
+			fmiddle.className = 'middletext';
+			skip222.className='skip1';
+			fsecondmiddle.className='middletext';
+			skip333.className='skipnow';
+			fthirdmiddle.className="showmiddletext";
+		};
+		
+		
+	</script>
+</html>

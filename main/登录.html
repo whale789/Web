@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Welcome</title>
+		<style type="text/css">
+		    .bgd{
+				margin-top:-8.5%;
+				position: absolute; 
+				width: 100%; 
+				height: 850px; 
+				background-color:snow; 
+				z-index: -1;
+			}
+		    .total{
+				width: 80%;
+				height:550px;
+				border:1px solid wheat;
+				margin-left:10.5%;
+				margin-top:6%;
+			}
+			.login{
+				/*border:1px solid #000000;*/
+				width:30%;
+				height: 350px;
+				margin-left:61.5%;
+				margin-top:-30%;
+				/*background-color:white;*/
+			}
+			#user{
+				width: 75%;
+				height:35px;
+				padding: 5px;
+				color: black;
+				margin-top: 25px;
+				margin-left:10%;
+				border: 1px whitesmoke;
+				background-color: whitesmoke;
+				border-radius: 5px;
+				letter-spacing: 2px;
+			}
+			#password{
+				width: 75%;
+				height:35px;
+				padding: 5px;
+				color: black;
+				margin-top: 25px;
+				margin-left:10%;
+				border: 1px whitesmoke;
+				background-color: whitesmoke;
+				border-radius: 5px;
+				letter-spacing: 2px;
+			}
+			button{
+				margin-top:20%;
+				margin-left:38%;
+				width: 13%;
+				height: 20px;
+				padding: 5px;
+				color: black;
+				background-color:whitesmoke;
+				border: 1px whitesmoke;
+				border-radius: 5px;
+				letter-spacing: 2px;
+			}
+			.btn:hover{
+				background-color: #FFFFFF;
+				font-size: 15px;
+                color: #55AAFF;
+			}
+		</style>
+	</head>
+	<body>
+		<script src="js/jquery-1.8.3.min.js"></script>
+		<script src="js/springy.js"></script>
+		<script src="js/springyui.js"></script>
+		<script>
+		var graph = new Springy.Graph();
+		
+		var dennis = graph.newNode({
+		  label: 'Server',
+		  ondoubleclick: function() { console.log("Hello!"); }
+		});
+		var michael = graph.newNode({label: 'Java'});
+		var jessica = graph.newNode({label: 'C++'});
+		var timothy = graph.newNode({label: 'C'});
+		var barbara = graph.newNode({label: 'Python'});
+		var franklin = graph.newNode({label: 'Html'});
+		var monty = graph.newNode({label: 'CSS'});
+		var james = graph.newNode({label: 'Js'});
+		var bianca = graph.newNode({label: 'C#'});
+		
+		graph.newEdge(dennis, michael, {color: '#00A0B0'});
+		graph.newEdge(michael, dennis, {color: '#6A4A3C'});
+		graph.newEdge(michael, jessica, {color: '#CC333F'});
+		graph.newEdge(jessica, barbara, {color: '#EB6841'});
+		graph.newEdge(michael, timothy, {color: '#EDC951'});
+		graph.newEdge(franklin, monty, {color: '#7DBE3C'});
+		graph.newEdge(dennis, monty, {color: '#000000'});
+		graph.newEdge(monty, james, {color: '#00A0B0'});
+		graph.newEdge(barbara, timothy, {color: '#6A4A3C'});
+		graph.newEdge(dennis, bianca, {color: '#CC333F'});
+		graph.newEdge(bianca, monty, {color: '#EB6841'});
+		
+		jQuery(function(){
+		  var springy = window.springy = jQuery('#springydemo').springy({
+		    graph: graph,
+		    nodeSelected: function(node){
+		      console.log('Node selected: ' + JSON.stringify(node.data));
+		    }
+		  });
+		});
+		</script>
+		<div class="bgd">
+			<img src="image/background.png" height="850px" width="100%" />
+		</div>
+		<div class="total">
+			<canvas id="springydemo" width="700" height="530"> </canvas>
+			<div class="login">
+				<input type="text" id="user" placeholder="用户名" required="required"><br />
+				<input type="password" id="password" placeholder="密码" required="required"><br />
+				<button class="btn" onclick="myFunction()" style="width: 100px;height: 30px;">登录</button><br />
+				<div style="margin-top: 5%;">
+				   <a href="注册.html" style="font-size: 10px;margin-left: 36%;margin-top:50px;">还没有账号？点我注册</a>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script>
+	function myFunction() {
+	  var temp=0;
+	  var dataJson=window.localStorage.getItem('list');
+	  dataJson=eval('('+dataJson+')');
+	  for (var i=0;i<dataJson.length;i++) {
+		  if(document.getElementById("user").value==dataJson[i].user)
+		  {
+			  temp++;
+			  if(document.getElementById("password").value==dataJson[i].password)
+			  {
+			  	alert("登录成功");
+			  	window.location="主页.html";
+			  }  
+			  else
+			  {
+			    alert("输入的密码不正确");
+			  }
+		  }
+	   }
+	   if(temp==0)
+	   {
+		   alert("用户不存在");
+	   }
+	   
+	   function SetCookie(cookieName,cookieValue) {
+	       /*设置Cookie值*/
+	       document.cookie = cookieName + "=" + escape(cookieValue)
+	   }
+	  
+	   var username = $("user").value;
+	      if(username.length>0 && username) {
+	               SetCookie("username", username);
+				    /*document.location="comment.html";*/
+	      }
+	   function $(id) {
+	       return document.getElementById(id);
+	   }
+	}
+	</script>
+</html>
